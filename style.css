@@ -1,0 +1,98 @@
+*{
+     margin:0px;
+     padding:0px;
+     box-sizing: border-box;
+}
+body{
+  
+      font-family: "Edu NSW ACT Cursive", cursive;
+       font-optical-sizing: auto;
+}
+.navbar{
+       background-color: rgb(54, 53, 53);
+       width: 100%;
+       height: 120px;
+       display: flex;
+       flex-direction: row;
+       justify-content: space-between;
+}
+.first{
+       width: 37%;
+       display: flex;
+       flex-direction: row;     
+}
+.first img{
+       height: 100px;
+       width: 100px;
+       margin: 10px auto;
+       border-radius: 5px;
+       margin-left: 55px;
+}
+.first h1{
+      color: whitesmoke;
+      margin: 48px auto;
+      line-height: 1.2;
+}
+.first h1:hover{ 
+         background:linear-gradient(to right , red , yellow , blue);
+         -webkit-background-clip: text;
+         -webkit-text-fill-color: transparent;
+      
+}
+.navlist{
+      color: whitesmoke;
+      width: 35%;
+}
+ul{
+      text-decoration: none;
+      list-style-type: none;
+      display: flex;
+      flex-direction: row;
+      gap:18px;
+      margin: 48px;
+}
+ul li{
+      font-weight: 600;
+      font-size: 1.2rem;
+}
+
+ul li:hover{
+      color: rgb(137, 67, 207);
+}
+img{
+      width:100%;
+}
+
+.container{
+       height: 800px;
+       width : 1020px;
+       border: 2px rgb(211, 211, 211) solid;
+       background-color:rgb(230, 230, 235);
+       margin: 50px auto;
+}
+.container h1{
+       text-align: center;
+       margin-top: 40px;
+       color: rgba(112, 40, 117, 0.993);
+       font-weight: 500;
+}
+.container p{
+       text-align: center;
+       line-height: 2.7;
+       font-size: 1.3rem;
+}
+.container hr{
+       width: 10%;
+       margin-left:450px;
+       line-height: 3;
+       background-color:rgba(112, 40, 117, 0.993);
+       font-weight: bold;
+       height:4px;
+}
+
+.grid_container{
+       display: grid;
+       grid-template-columns: 1fr 1fr 1fr;
+       grid-template-rows: 1fr;
+       gap:10px;
+}
