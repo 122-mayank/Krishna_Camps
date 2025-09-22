@@ -53,7 +53,7 @@ body {
 /* Hero Section */
 .hero {
   position: relative;
-  background: url('./media/tp207-blogbanner-03-257.jpg') no-repeat center/cover;
+  background: url('../media/tp207-blogbanner-03-257.jpg') no-repeat center/cover;
   height: 400px;
   display: flex;
   justify-content: center;
