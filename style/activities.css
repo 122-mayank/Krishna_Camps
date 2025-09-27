@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+background: linear-gradient(to bottom right,#ebc798, #f8f6ef);
+
+
+  color: #362f6d;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Heading */
+h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 40px;
+  color: #362f6d;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Container for cards */
+.activities-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+/* Flip Card */
+.activity-box {
+  width: 300px;
+  height: 400px;
+  perspective: 1000px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.activity-box:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Front & Back */
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  backface-visibility: hidden;
+  overflow: hidden;
+}
+
+/* Front Image */
+.card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card-front img:hover {
+  transform: scale(1.05);
+}
+
+/* Back Side */
+.card-back {
+  background: #fff8ec;
+  color: #362f6d;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  transform: rotateY(180deg);
+  font-weight: 600;
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.card-back h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #EF7722;
+  font-family: 'Edu NSW ACT Cursive', cursive;
+}
+
+.card-back p {
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .activity-box { width: 45%; height: 350px; }
+}
+
+@media (max-width: 768px) {
+  .activity-box { width: 70%; height: 300px; }
+}
+
+@media (max-width: 576px) {
+  .activity-box { width: 90%; height: 250px; }
+}
