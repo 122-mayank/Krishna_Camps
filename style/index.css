@@ -10,48 +10,7 @@ body {
   color: #333;
 }
 
-/* Navbar */
-.navbar {
-  background: #362f6d;
-  width: 100%;
-  padding: 15px 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-}
-a{
-  text-decoration: none;
-  color: #fff;
-}
-.first {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-.first img {
-  height: 70px;
-  width: 70px;
-  border-radius: 10px;
-}
-.first h1 {
-  color: #fff;
-  font-size: 1.6rem;
-  font-weight: 700;
-}
-.navlist ul {
-  display: flex;
-  gap: 25px;
-  list-style: none;
-  flex-wrap: wrap;
-}
-.navlist li {
-  font-weight: 600;
-  cursor: pointer;
-}
-.navlist li a:hover {
-  color: #ffd93d;
-}
+/*  */
 
 /* Hero Section */
 .hero {
