@@ -6,12 +6,8 @@
 
 body {
   font-family: "Montserrat", sans-serif;
-background: linear-gradient(to bottom right,#ebc798, #f8f6ef);
-
-
+  background: linear-gradient(to bottom right, #ebc798, #f8f6ef);
   color: #362f6d;
-  /* text-align: center; */
-  /* padding: 20px; */
 }
 
 /* Heading */
@@ -19,99 +15,141 @@ header h1 {
   margin-top: 30px;
   font-size: 2.5rem;
   font-weight: 800;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   color: #362f6d;
   text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
   text-align: center;
 }
 
-/* Container for cards */
-.activities-container {
+/* New Experience Section */
+.experience-section {
+  text-align: center;
+  margin: 40px auto;
+  padding: 20px;
+  max-width: 1100px;
+}
+
+.experience-section h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  color: #EF7722;
+}
+
+.experience-section p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  color: #444;
+}
+
+/* Feature Icons */
+.features {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 30px;
 }
 
-/* Flip Card */
+.feature-box {
+  background: #fff8ec;
+  border-radius: 15px;
+  padding: 20px;
+  width: 220px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.feature-box:hover {
+  transform: translateY(-5px);
+}
+
+.feature-box i {
+  font-size: 2rem;
+  color: #362f6d;
+  margin-bottom: 10px;
+}
+
+.feature-box h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #EF7722;
+}
+
+.feature-box p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Activities Grid */
+.activities-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  padding: 20px;
+}
+
 .activity-box {
   width: 300px;
-  height: 400px;
-  perspective: 1000px;
-}
-
-.card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-  border-radius: 20px;
+  background: #fff;
+  border-radius: 15px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-}
-
-.activity-box:hover .card-inner {
-  transform: rotateY(180deg);
-}
-
-/* Front & Back */
-.card-front, .card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 20px;
-  backface-visibility: hidden;
   overflow: hidden;
+  transition: transform 0.3s;
 }
 
-/* Front Image */
-.card-front img {
+.activity-box:hover {
+  transform: translateY(-8px);
+}
+
+.activity-box img {
   width: 100%;
-  height: 100%;
+  height: 200px;
   object-fit: cover;
-  transition: transform 0.3s ease;
 }
 
-.card-front img:hover {
-  transform: scale(1.05);
-}
-
-/* Back Side */
-.card-back {
-  background: #fff8ec;
-  color: #362f6d;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  transform: rotateY(180deg);
-  font-weight: 600;
-  box-shadow: inset 0 0 20px rgba(0,0,0,0.1);
+.activity-content {
+  padding: 15px;
   text-align: center;
 }
 
-.card-back h2 {
-  font-size: 1.8rem;
-  margin-bottom: 15px;
-  color: #EF7722;
-  font-family: 'Edu NSW ACT Cursive', cursive;
+.activity-content h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #362f6d;
 }
 
-.card-back p {
-  font-size: 1rem;
-  line-height: 1.4;
+.activity-content p {
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.activity-content a {
+  display: inline-block;
+  background: #EF7722;
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 15px;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.activity-content a:hover {
+  background: #d85f15;
 }
 
 /* Responsive */
 @media (max-width: 992px) {
-  .activity-box { width: 45%; height: 350px; }
+  .activity-box { width: 45%; }
+  .feature-box { width: 40%; }
 }
-
 @media (max-width: 768px) {
-  .activity-box { width: 70%; height: 300px; }
+  .activity-box { width: 70%; }
+  .feature-box { width: 80%; }
 }
-
 @media (max-width: 576px) {
-  .activity-box { width: 90%; height: 250px; }
+  .activity-box { width: 90%; }
+  .feature-box { width: 90%; }
 }
