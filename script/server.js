@@ -2,6 +2,9 @@ const express = require('express');
 const path = require('path');
 const app = express();
 
+app.set('view engine','ejs');
+app.set('views',path.join(__dirname,'../','views'));
+
 // console.log(__dirname);
 app.use(express.static(path.join(__dirname,'../','style')));
 app.use(express.static(path.join(__dirname,'../media')));
@@ -9,11 +12,11 @@ app.use(express.static(path.join(__dirname,'../media')));
 console.log(__dirname);
 
 app.get('/',(req,res,next)=>{
-       res.sendFile(path.join(__dirname,'../','views','index.html'));
+      res.render('index');
 });
 
 app.get('/activities',(req,res,next)=>{
-      res.sendFile(path.join(__dirname,'../','views','activities.html'));
+       res.render('activities');
 });
 
 const PORT = 3002;
