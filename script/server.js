@@ -19,6 +19,10 @@ app.get('/activities',(req,res,next)=>{
        res.render('activities');
 });
 
+app.get('/about',(req,res,next)=>{
+       res.render('about');
+})
+
 const PORT = 3002;
 app.listen(PORT,()=>{
      console.log(`Server is running on http://localhost:${PORT}`);
