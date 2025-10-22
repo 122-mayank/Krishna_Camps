@@ -1,250 +1,302 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-     <link rel="stylesheet" href="/main.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Krishna Camps Activities</title>
+  <link rel="stylesheet" href="/main.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
-   <style>
-     * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
-}
+  <link
+    href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&family=Montserrat:wght@300;400;600;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-body {
-  background-color: #fff9af;
-}
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-/* Heading */
-.heading {
-  text-align: center;
-  margin-top: 20px;
-  color: #fa812f;
-  font-weight: 700;
-  font-size: 2.5rem;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #fffdf5;
+      color: #333;
+      overflow-x: hidden;
+    }
 
-/* Main Section */
-.main {
-  width: 80%;
-  height: auto;
-  border: 2px solid #fa812f;
-  border-radius: 10px;
-  padding: 25px;
-  margin: 25px auto;
-  background-color: #fffdf5;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-}
+    .hero {
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)), url("/pexels-redes-aventura-amazonia-2152995917-32507021.jpg");
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-left: 8%;
+      color: white;
+    }
 
-.main:hover {
-  transform: translateY(-4px);
-}
+    .hero-content { max-width: 600px; animation: fadeIn 1.5s ease-in-out; }
+    .hero-content h1 {
+      font-size: 3rem; font-weight: 800; color: #FFF0CE;
+      font-family: 'Edu NSW ACT Cursive', cursive;
+    }
+    .hero-content p { font-size: 1.1rem; line-height: 1.8; margin-top: 20px; color: #f0f0f0; }
 
-/* Container: text + image */
-.container {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  gap: 40px;
-  flex-wrap: wrap;
-}
+    .hero-content button {
+      margin-top: 30px; background-color: #FA812F; border: none;
+      padding: 12px 30px; border-radius: 25px; font-size: 1rem;
+      color: white; font-weight: 600; cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .hero-content button:hover {
+      background-color: #FFD700; color: #3B38A0;
+      transform: translateY(-3px);
+      box-shadow: 0 4px 15px rgba(255, 215, 0, 0.5);
+    }
 
-/* Image section */
-.img_con img {
-  width: 90%;
-  max-width: 420px;
-  height: auto;
-  border-radius: 20px;
-  margin-left: 20px;
-  margin-top: 20px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease-in-out;
-}
+    .next_h {
+      text-align: center; margin-top: 70px;
+      font-size: 2.4rem; color: #3B38A0;
+    }
 
-.img_con img:hover {
-  transform: scale(1.04);
-}
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-/* Paragraph text */
-.text p {
-  line-height: 1.8;
-  color: #333;
-  font-size: 1.05rem;
-  text-align: justify;
-}
+    .description, .next_description {
+      max-width: 540px; text-align: center;
+      margin: 70px auto 0; line-height: 1.6;
+    }
+    .next_description { margin-top: 20px; }
 
-/* Section Headings inside main */
-.main h1 {
-  font-weight: 600;
-  margin-top: 25px;
-  color: #3b38a0;
-  border-left: 5px solid #fa812f;
-  padding-left: 10px;
-  letter-spacing: 0.5px;
-}
+    .cursive {
+      text-align: center; margin: 20px auto;
+      max-width: 700px; font-size: 0.9rem;
+      font-family: cursive;
+    }
 
-/* List items */
-.items {
-  margin-left: 40px;
-  line-height: 1.6;
-  margin-top: 15px;
-  color: #444;
-  font-size: 1rem;
-}
+    /* ==============================
+       VALUE CARDS
+    =============================== */
+    .values-section {
+      display: flex; flex-wrap: wrap; justify-content: center;
+      gap: 25px; margin: 60px auto;
+      max-width: 1100px; padding: 0 20px;
+    }
 
-.items li {
-  margin-bottom: 6px;
-  position: relative;
-  padding-left: 10px;
-}
+    .value-card {
+      background-color: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      padding: 35px 25px; width: 230px;
+      text-align: center; transition: all 0.3s ease;
+      border-top: 5px solid #FA812F;
+    }
+    .value-card:hover { transform: translateY(-8px); box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
+    .value-card i { font-size: 2rem; color: #FA812F; margin-bottom: 15px; }
+    .value-card h3 { font-size: 1.2rem; color: #3B38A0; font-weight: 700; margin-bottom: 12px; }
+    .value-card p { font-size: 0.95rem; color: #555; line-height: 1.5; }
 
-.items li::before {
-  content: "✔";
-  color: #fa812f;
-  font-weight: bold;
-  position: absolute;
-  left: -20px;
-}
+    /* ==============================
+       PROGRAMS SECTION
+    =============================== */
+    .programs-section {
+      background: linear-gradient(180deg, #FFF8E7, #FFF);
+      padding: 80px 20px;
+    }
 
-/* Hover animation for list items */
-.items li:hover {
-  color: #3b38a0;
-  transition: color 0.3s;
-}
+    .programs-section h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #3B38A0;
+      font-family: 'Edu NSW ACT Cursive', cursive;
+      margin-bottom: 10px;
+    }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-  .main {
-    width: 90%;
-  }
-}
+    .programs-section p.subheading {
+      text-align: center;
+      font-size: 1.1rem;
+      color: #555;
+      margin-bottom: 50px;
+    }
 
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
+    .programs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
 
-  .img_con img {
-    width: 95%;
-    margin: 20px 0;
-  }
+    .program-card {
+      background-color: white;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-  .text p {
-    font-size: 1rem;
-    padding: 0 10px;
-  }
+    .program-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
 
-  .main h1 {
-    font-size: 1.4rem;
-    text-align: center;
-  }
+    .program-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
 
-  .heading {
-    font-size: 2rem;
-  }
+    .program-card-content {
+      padding: 20px;
+      text-align: center;
+    }
 
-  .items {
-    margin-left: 20px;
-  }
-}
+    .program-card-content h3 {
+      font-size: 1.2rem;
+      color: #3B38A0;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
 
-@media (max-width: 480px) {
-  .heading {
-    font-size: 1.6rem;
-  }
+    .program-card-content p {
+      font-size: 0.95rem;
+      color: #555;
+    }
 
-  .text p {
-    font-size: 0.95rem;
-  }
-
-  .main {
-    padding: 15px;
-  }
-
-  .img_con img {
-    max-width: 100%;
-  }
-}
-
-   </style>
+    @media (max-width: 768px) {
+      .programs-section h2 { font-size: 2rem; }
+      .programs-section p.subheading { padding: 0 15px; }
+    }
+  </style>
 </head>
+
 <body>
-   <%- include("partial/nav")%>
+  <%- include("partial/nav") %>
 
-    <h1 class="heading">Archery</h1>
-    <div class="main">
-    <div class="container">
-        <div class="text">
-          <p> Archery – Immerse yourself in the thrilling world of archery, where precision meets patience and focus becomes
-            your greatest ally. This activity challenges participants to hone their hand-eye coordination,
-            concentration, and control, making every arrow a step toward personal growth. Under the guidance of
-            skilled instructors in a safe and supportive environment, children and adults alike can experience the joy of aiming
-             for the target, learning to adjust their techniques, and celebrating small victories with every successful shot.
-             Beyond skill-building, archery fosters self-confidence,
-           discipline, and a sense of achievement, all while providing an enjoyable, engaging, and memorable outdoor adventure.</p>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>About Krishna Camps</h1>
+      <p>
+        Welcome to <strong>Krishna Camps</strong> — where adventure meets learning!
+        Our camp brings together exciting outdoor activities like archery, boating,
+        trekking, and team-building games to help participants build confidence, focus, and teamwork
+        skills while having fun in nature.
+      </p>
+      <button>Explore Activities</button>
+    </div>
+  </section>
+
+  <p class="description">
+    Welcome to Krishna Camps, your ultimate destination for fun, adventure, and unforgettable outdoor experiences!
+    Nestled in a refreshing natural setting, Krishna Camps brings you a perfect blend of thrill, teamwork, and recreation —
+    designed to energize both the body and mind.
+  </p>
+
+  <p class="next_description">
+    From heart-pumping activities like zip lining, river crossing, rope climbing, and mountain biking,
+    to exciting group experiences such as sumo wrestling, foam parties, and dart games,
+    every event is crafted to bring people together in a spirit of joy and challenge.
+  </p>
+
+  <p class="next_description">
+    Beyond the activities, we provide a space to unplug, relax, and connect with nature.
+    Our trained instructors ensure that all activities are conducted under professional supervision
+    with high-quality equipment and safety standards.
+  </p>
+
+  <p class="cursive">
+    *“KRISHNA CAMPS PROGRAMS ARE DELIVERED ACROSS INDIA BY DEDICATED INSTRUCTORS WHO ARE PASSIONATE ABOUT ADVENTURE, LEARNING, AND NURTURING YOUNG MINDS.”*
+  </p>
+
+  <h1 class="next_h">VALUE OF KRISHNA CAMPS</h1>
+
+  <section class="values-section">
+    <div class="value-card">
+      <i class="fa-solid fa-hand-holding-heart"></i>
+      <h3>NEVER SAY NO</h3>
+      <p>A Krishna Camper never says no to a given task and always finds a way to get it done.</p>
+    </div>
+
+    <div class="value-card">
+      <i class="fa-solid fa-leaf"></i>
+      <h3>NATURE SENSITIVE</h3>
+      <p>A Krishna Camper strives to protect and conserve nature, respecting its beauty and balance.</p>
+    </div>
+
+    <div class="value-card">
+      <i class="fa-solid fa-mountain"></i>
+      <h3>GROUNDED</h3>
+      <p>A Krishna Camper stays humble, remembers the roots, and keeps revisiting the frontline work.</p>
+    </div>
+  </section>
+
+  <!-- ===============================
+       PROGRAMS & COLLABORATIONS
+  ================================== -->
+  <section class="programs-section">
+    <h2>Programs & Collaborations</h2>
+    <p class="subheading">
+      Krishna Camps has proudly conducted several adventure and learning programs across reputed schools in India.
+    </p>
+
+    <div class="programs-grid">
+      <div class="program-card">
+        <img src="/bl-international.jpg" alt="B L International Smart School">
+        <div class="program-card-content">
+          <h3>B L International Smart School</h3>
+          <p>Jaipur Road, Toda Rai Singh, Tonk Jaipur</p>
         </div>
-         <div class="img_con">
-             <img src="/pexels-ionatelo-27786385.jpg" alt="Archery image">
-         </div>
-    </div>
-    <h1>Safety Precautions</h1>
-       <ul class="items">
-        <li>Check bows and arrows for damage before use.</li>
-        <li>Keep a safe distance from others.</li>
-        <li>Always shoot under instructor supervision.</li>
-        <li>Maintain proper stance and shooting technique.</li>
-       </ul>
-     <h1>Requirements</h1>
-       <ul class="items">
-        <li>Bows</li>
-        <li>Arrows</li>
-        <li>Targets</li>
-        <li>Finger Tabs or Gloves</li>
-       </ul>
-    </div>
+      </div>
 
-     <h1 class="heading">Boating</h1>
-    <div class="main">
-    <div class="container">
-        <div class="text">
-          <p> Boating is a refreshing and joyful water activity that allows participants to experience the calmness and beauty
-            of nature while learning coordination, balance, and teamwork. It involves rowing, paddling, or steering a boat
-            across a lake or river, providing both excitement and relaxation. Through boating, participants not only enjoy
-            the thrill of gliding over water but also develop patience, cooperation, and a sense of responsibility. It is
-             a perfect blend of adventure and serenity, offering moments of peace as well as fun challenges. Whether done'
-              solo or with friends, boating creates unforgettable memories and strengthens one’s connection with nature.
-            </p>
+      <div class="program-card">
+        <img src="/dps.jpg" alt="Delhi Public School">
+        <div class="program-card-content">
+          <h3>Delhi Public School</h3>
+          <p>New Delhi</p>
         </div>
-         <div class="img_con">
-             <img src="/two-man-paddling-kayak-lake.jpg" alt="Boating image">
-         </div>
-    </div>
-    <h1>Safety Precautions</h1>
-       <ul class="items">
-        <li>Always wear a life jacket before boarding the boat.</li>
-        <li>Check weather conditions before going boating.</li>
-        <li>Follow the instructor’s or guide’s directions carefully.</li>
-        <li>Carry basic safety gear like ropes, whistle, and first aid kit.</li>
-       </ul>
-     <h1>Requirements</h1>
-       <ul class="items">
-        <li>Boat or canoe</li>
-        <li>Safety ropes</li>
-        <li>Paddles or oars</li>
-        <li>Life jackets</li>
-       </ul>
- </div>
+      </div>
 
+      <div class="program-card">
+        <img src="/jaipuriya.jpg" alt="Jaipuriya School">
+        <div class="program-card-content">
+          <h3>Jaipuria School</h3>
+          <p>Lucknow</p>
+        </div>
+      </div>
+
+      <div class="program-card">
+        <img src="/allenhouse.avif" alt="Allenhouse Public School">
+        <div class="program-card-content">
+          <h3>Allenhouse Public School</h3>
+          <p>Kanpur</p>
+        </div>
+      </div>
+
+      <div class="program-card">
+        <img src="/gauarav.jpeg" alt="Gaurav Memorial International School">
+        <div class="program-card-content">
+          <h3>Gaurav Memorial International School</h3>
+          <p>Bithoor Road, Kanpur</p>
+        </div>
+      </div>
+
+      <div class="program-card">
+        <img src="/steeping_Stone.jpg" alt="Stepping Stone School">
+        <div class="program-card-content">
+          <h3>Stepping Stone School</h3>
+          <p>Gorakhpur</p>
+        </div>
+      </div>
+
+      <div class="program-card">
+        <img src="/images/gardenia.jpg" alt="Gardenia Public School">
+        <div class="program-card-content">
+          <h3>Gardenia Public School</h3>
+          <p>Uttar Pradesh</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
 </body>
 </html>

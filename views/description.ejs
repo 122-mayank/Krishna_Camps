@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link rel="stylesheet" href="/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+   <style>
+     * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+    background: linear-gradient(to bottom right, #f8f6ef,beige);
+}
+
+/* Heading */
+.heading {
+  text-align: center;
+  margin-top: 20px;
+  color: #362f6d;
+  font-weight: 700;
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Main Section */
+.main {
+  width: 80%;
+  height: auto;
+  /* border: 2px solid #fa812f; */
+  border-radius: 10px;
+  padding: 25px;
+  margin: 25px auto;
+ /* background-color: #fffdf5;*/
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.main:hover {
+  transform: translateY(-4px);
+}
+
+/* Container: text + image */
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* Image section */
+.img_con img {
+  width: 90%;
+  max-width: 420px;
+  height: auto;
+  border-radius: 20px;
+  margin-left: 20px;
+  margin-top: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease-in-out;
+}
+
+.img_con img:hover {
+  transform: scale(1.04);
+}
+
+/* Paragraph text */
+.text p {
+  line-height: 1.8;
+  color: #333;
+  font-size: 1.05rem;
+  text-align: justify;
+  margin-top: 18px;
+}
+
+/* Section Headings inside main */
+.main h1 {
+  font-weight: 600;
+  margin-top: 25px;
+  color: #3b38a0;
+  border-left: 5px solid #fa812f;
+  padding-left: 10px;
+  letter-spacing: 0.5px;
+}
+
+/* List items */
+.items {
+  margin-left: 40px;
+  line-height: 1.6;
+  margin-top: 15px;
+  color: #444;
+  font-size: 1rem;
+}
+
+.items li {
+  margin-bottom: 6px;
+  position: relative;
+  padding-left: 10px;
+}
+
+.items li::before {
+  content: "✔";
+  color: #fa812f;
+  font-weight: bold;
+  position: absolute;
+  left: -20px;
+}
+
+/* Hover animation for list items */
+.items li:hover {
+  color: #3b38a0;
+  transition: color 0.3s;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .main {
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .img_con img {
+    width: 95%;
+    margin: 20px 0;
+  }
+
+  .text p {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  .main h1 {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .heading {
+    font-size: 2rem;
+  }
+
+  .items {
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .heading {
+    font-size: 1.6rem;
+  }
+
+  .text p {
+    font-size: 0.95rem;
+  }
+
+  .main {
+    padding: 15px;
+  }
+
+  .img_con img {
+    max-width: 100%;
+  }
+}
+
+   </style>
+</head>
+<body>
+   <%- include("partial/nav")%>
+
+    <h1 class="heading">Archery</h1>
+    <div class="main">
+    <div class="container">
+        <div class="text">
+           <h1>Description</h1>
+          <p> Archery – Immerse yourself in the thrilling world of archery, where precision meets patience and focus becomes
+            your greatest ally. This activity challenges participants to hone their hand-eye coordination,
+            concentration, and control, making every arrow a step toward personal growth. Under the guidance of
+            skilled instructors in a safe and supportive environment, children and adults alike can experience the joy of aiming
+             for the target, learning to adjust their techniques, and celebrating small victories with every successful shot.
+             Beyond skill-building, archery fosters self-confidence,
+           discipline, and a sense of achievement, all while providing an enjoyable, engaging, and memorable outdoor adventure.</p>
+        </div>
+         <div class="img_con">
+             <img src="/pexels-ionatelo-27786385.jpg" alt="Archery image">
+         </div>
+    </div>
+    <h1>Safety Precautions</h1>
+       <ul class="items">
+        <li>Check bows and arrows for damage before use.</li>
+        <li>Keep a safe distance from others.</li>
+        <li>Always shoot under instructor supervision.</li>
+        <li>Maintain proper stance and shooting technique.</li>
+       </ul>
+     <h1>Requirements</h1>
+       <ul class="items">
+        <li>Bows</li>
+        <li>Arrows</li>
+        <li>Targets</li>
+        <li>Finger Tabs or Gloves</li>
+       </ul>
+    </div>
+
+     <h1 class="heading">Boating</h1>
+    <div class="main">
+    <div class="container">
+        <div class="text">
+            <h1>Description</h1>
+          <p> Boating is a refreshing and joyful water activity that allows participants to experience the calmness and beauty
+            of nature while learning coordination, balance, and teamwork. It involves rowing, paddling, or steering a boat
+            across a lake or river, providing both excitement and relaxation. Through boating, participants not only enjoy
+            the thrill of gliding over water but also develop patience, cooperation, and a sense of responsibility. It is
+             a perfect blend of adventure and serenity, offering moments of peace as well as fun challenges. Whether done'
+              solo or with friends, boating creates unforgettable memories and strengthens one’s connection with nature.
+            </p>
+        </div>
+         <div class="img_con">
+             <img src="/two-man-paddling-kayak-lake.jpg" alt="Boating image">
+         </div>
+    </div>
+    <h1>Safety Precautions</h1>
+       <ul class="items">
+        <li>Always wear a life jacket before boarding the boat.</li>
+        <li>Check weather conditions before going boating.</li>
+        <li>Follow the instructor’s or guide’s directions carefully.</li>
+        <li>Carry basic safety gear like ropes, whistle, and first aid kit.</li>
+       </ul>
+     <h1>Requirements</h1>
+       <ul class="items">
+        <li>Boat or canoe</li>
+        <li>Safety ropes</li>
+        <li>Paddles or oars</li>
+        <li>Life jackets</li>
+       </ul>
+ </div>
+
+
+</body>
+</html>
