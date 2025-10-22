@@ -21,7 +21,9 @@ app.get('/activities',(req,res,next)=>{
 
 app.get('/about',(req,res,next)=>{
        res.render('about');
-})
+});
+
+
 
 const PORT = 3002;
 app.listen(PORT,()=>{

@@ -162,11 +162,176 @@
       font-size: 0.95rem;
       color: #555;
     }
+    .btn {
+  display: inline-block;
+  background-color: #FA812F;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
 
-    @media (max-width: 768px) {
-      .programs-section h2 { font-size: 2rem; }
-      .programs-section p.subheading { padding: 0 15px; }
-    }
+.btn:hover {
+  background-color: #FFD700;
+  color: #3B38A0;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.5);
+}
+
+
+   /* ✅ Add this below your existing CSS (at the very end) */
+
+/* ========================================
+   RESPONSIVENESS IMPROVEMENTS
+======================================== */
+
+/* For tablets and small laptops */
+@media (max-width: 992px) {
+  .hero {
+    height: 80vh;
+    padding-left: 5%;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .value-card {
+    width: 280px;
+  }
+
+  .values-section {
+    gap: 20px;
+    padding: 0 10px;
+  }
+
+  .programs-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+}
+
+/* For mobile devices */
+@media (max-width: 768px) {
+  .hero {
+    height: auto;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 20px;
+    text-align: center;
+  }
+
+  .hero-content {
+    padding: 0;
+    max-width: 100%;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 0.95rem;
+    margin-top: 15px;
+  }
+
+  .hero-content button {
+    margin-top: 20px;
+    padding: 10px 25px;
+    font-size: 0.9rem;
+  }
+
+  .next_h {
+    font-size: 1.8rem;
+    margin-top: 50px;
+  }
+
+  .description, .next_description {
+    margin: 40px 15px 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .cursive {
+    font-size: 0.85rem;
+    margin: 30px 20px;
+  }
+
+  .values-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .value-card {
+    width: 85%;
+    max-width: 350px;
+  }
+
+  .programs-section h2 {
+    font-size: 2rem;
+  }
+
+  .programs-section p.subheading {
+    font-size: 0.95rem;
+    margin: 0 15px 40px;
+  }
+
+  .program-card-content h3 {
+    font-size: 1rem;
+  }
+
+  .program-card-content p {
+    font-size: 0.9rem;
+  }
+}
+
+/* For very small screens */
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 1.7rem;
+  }
+
+  .hero-content p {
+    font-size: 0.9rem;
+  }
+
+  .hero-content button {
+    padding: 8px 20px;
+    font-size: 0.85rem;
+  }
+
+  .next_h {
+    font-size: 1.6rem;
+  }
+
+  .description, .next_description {
+    font-size: 0.9rem;
+  }
+
+  .cursive {
+    font-size: 0.8rem;
+  }
+
+  .value-card {
+    padding: 25px 20px;
+  }
+
+  .programs-grid {
+    gap: 15px;
+  }
+
+  .program-card img {
+    height: 160px;
+  }
+}
+
   </style>
 </head>
 
@@ -182,7 +347,7 @@
         trekking, and team-building games to help participants build confidence, focus, and teamwork
         skills while having fun in nature.
       </p>
-      <button>Explore Activities</button>
+     <a href="/activities" class="btn">Explore Activities</a>
     </div>
   </section>
 
@@ -288,13 +453,6 @@
         </div>
       </div>
 
-      <div class="program-card">
-        <img src="/images/gardenia.jpg" alt="Gardenia Public School">
-        <div class="program-card-content">
-          <h3>Gardenia Public School</h3>
-          <p>Uttar Pradesh</p>
-        </div>
-      </div>
     </div>
   </section>
 
