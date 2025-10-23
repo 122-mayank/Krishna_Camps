@@ -33,54 +33,41 @@ app.get('/contact-us',(req,res,next)=>{
         res.render('contact');
 });
 
-app.post('/submit' , async(req,res)=>{
+app.post('/submit', async (req, res) => {
+    const { schoolname, email, contact, designation } = req.body;
 
-       console.log(req.body);
+    let transporter = nodemailer.createTransport({
+        service:'gmail',
+        auth:{
+            user : process.env.SENDER_EMAIL,
+            pass: process.env.APP_PASSWORD
+        }
+    });
 
- const { schoolname, email, contact, designation } = req.body;
-       //create transporter
-       let transporter = nodemailer.createTransport({
-
-              service:'gmail',
-              auth:{
-                     user : process.env.SENDER_EMAIL,
-                     pass:process.env.APP_PASSWORD
-              }
-       });
-
-       //prepare email content
-
-        let mailOptions = {
-    from: `"Krishna Camps Website" <${process.env.SENDER_EMAIL}>`,
-    to: process.env.MANAGER_EMAIL,
-    replyTo: email, // school email
-    subject: `New Contact Form Submission from ${schoolname}`,
-    html: `
-        <h2>New Contact Form Submission</h2>
-        <p><strong>School Name:</strong> ${schoolname}</p>
-        <p><strong>Email ID:</strong> ${email}</p>
-        <p><strong>Contact Number:</strong> ${contact}</p>
-        <p><strong>Designation:</strong> ${designation}</p>
-    `
-};
+    let mailOptions = {
+        from: `"Krishna Camps Website" <${process.env.SENDER_EMAIL}>`,
+        to: process.env.MANAGER_EMAIL,
+        replyTo: email,
+        subject: `New Contact Form Submission from ${schoolname}`,
+        html: `
+            <h2>New Contact Form Submission</h2>
+            <p><strong>School Name:</strong> ${schoolname}</p>
+            <p><strong>Email ID:</strong> ${email}</p>
+            <p><strong>Contact Number:</strong> ${contact}</p>
+            <p><strong>Designation:</strong> ${designation}</p>
+        `
+    };
 
     try {
         await transporter.sendMail(mailOptions);
         console.log('Email sent successfully!');
-       //  alert("Email sent successfully!!");
-        res.redirect('/');  // or show a success page
+        res.status(200).send('Success'); // AJAX will handle redirect
     } catch(err) {
         console.error('Error sending email:', err);
-        res.send('Something went wrong. Please try again.');
+        res.status(500).send('Error');
     }
-
-
 });
 
-// app.post('/submit',(req,res,next)=>{
-//         console.log(req.body);
-//         res.render('index');
-// });
 
 const PORT = 3002;
 app.listen(PORT,()=>{
