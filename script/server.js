@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const nodemailer = require('nodemailer');
+const SibTransport = require('nodemailer-sendinblue-transport');
 require('dotenv').config();
 
 const app = express();
