@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "nodemailer": "^7.0.10",
+    "nodemailer-sendinblue-transport": "^2.0.1"
+  }
+}
