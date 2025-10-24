@@ -33,30 +33,29 @@ app.get('/contact-us',(req,res,next)=>{
         res.render('contact');
 });
 
+const transporter = nodemailer.createTransport(
+  new SibTransport({
+    apiKey: process.env.SENDINBLUE_API_KEY
+  })
+);
+
+// 📨 Handle form submission
 app.post('/submit', async (req, res) => {
-    const { schoolname, email, contact, designation } = req.body;
+  const { schoolname, email, contact, designation } = req.body;
 
-    let transporter = nodemailer.createTransport({
-        service:'gmail',
-        auth:{
-            user : process.env.SENDER_EMAIL,
-            pass: process.env.APP_PASSWORD
-        }
-    });
+  const mailOptions = {
+    from: process.env.SENDER_EMAIL, // use a verified sender from Brevo
+    to: process.env.MANAGER_EMAIL,
+    subject: `New Contact Form Submission from ${schoolname}`,
+    html: `
+      <h2>New Contact Form Submission</h2>
+      <p><strong>School Name:</strong> ${schoolname}</p>
+      <p><strong>Email:</strong> ${email}</p>
+      <p><strong>Contact:</strong> ${contact}</p>
+      <p><strong>Designation:</strong> ${designation}</p>
+    `
+  };
 
-    let mailOptions = {
-        from: `"Krishna Camps Website" <${process.env.SENDER_EMAIL}>`,
-        to: process.env.MANAGER_EMAIL,
-        replyTo: email,
-        subject: `New Contact Form Submission from ${schoolname}`,
-        html: `
-            <h2>New Contact Form Submission</h2>
-            <p><strong>School Name:</strong> ${schoolname}</p>
-            <p><strong>Email ID:</strong> ${email}</p>
-            <p><strong>Contact Number:</strong> ${contact}</p>
-            <p><strong>Designation:</strong> ${designation}</p>
-        `
-    };
 
     try {
         await transporter.sendMail(mailOptions);
