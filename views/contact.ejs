@@ -171,10 +171,14 @@
 </form>
 
 <!-- Alert message container -->
+    </div>
+  </main>
 
 
 
-<script>
+     <%- include('partial/footer') %>
+
+  <script>
 const form = document.getElementById('contactForm');
 const alertDiv = document.getElementById('alertMessage');
 
@@ -218,9 +222,5 @@ form.addEventListener('submit', async (e) => {
 
 
 </script>
-
-
-    </div>
-  </main>
 </body>
 </html>
