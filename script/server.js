@@ -44,6 +44,10 @@ const transporter = nodemailer.createTransport(
 app.post('/submit', async (req, res) => {
   const { schoolname, email, contact, designation } = req.body;
 
+  if(contact.length != 10){
+       res.status(500).send('Error');
+  }
+
   const mailOptions = {
     from: process.env.SENDER_EMAIL, // use a verified sender from Brevo
     to: process.env.MANAGER_EMAIL,

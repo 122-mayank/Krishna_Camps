@@ -179,7 +179,6 @@
 const form = document.getElementById('contactForm');
 const alertDiv = document.getElementById('alertMessage');
 
-
 function showAlert(message, type) {
     alertDiv.innerText = message;
     alertDiv.style.backgroundColor = type === 'success' ? '#28a745' : '#dc3545';
@@ -196,6 +195,12 @@ form.addEventListener('submit', async (e) => {
 
     const formData = new FormData(form);
     const data = Object.fromEntries(formData.entries());
+
+    // ✅ Frontend validation for contact number
+    if (!/^\d{10}$/.test(data.contact)) {
+        showAlert('Please enter a valid 10-digit contact number.', 'error');
+        return; // stop form submission
+    }
 
     try {
         const response = await fetch('/submit', {
@@ -216,8 +221,7 @@ form.addEventListener('submit', async (e) => {
         showAlert('Error: ' + err.message, 'error');
     }
 });
-
-
 </script>
+
 </body>
 </html>
