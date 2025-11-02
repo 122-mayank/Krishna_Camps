@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
 
   <style>
+
     * {
       margin: 0;
       padding: 0;
@@ -104,54 +105,50 @@
       transform: scale(1.03);
     }
   .alert {
-    position: fixed;
-    top: 90px; /* adjust according to navbar height */
-    right: 450px;
-    padding: 15px 25px;
-    background-color: #007BFF;
-    color: white;
-    border-radius: 5px;
-    box-shadow: 0px 4px 6px rgba(0,0,0,0.2);
-    font-family: sans-serif;
-    z-index: 1000;
-    opacity: 0;
-    transition: opacity 0.5s ease;
+  position: fixed;
+  top: 90px; /* adjust according to navbar height */
+  right: 450px;
+  padding: 15px 25px;
+  background-color: #007BFF;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0px 4px 6px rgba(0,0,0,0.2);
+  font-family: sans-serif;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
 .alert.show {
-    opacity: 1;
+  opacity: 1;
 }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(40px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+/* Responsive positioning for smaller screens */
+@media (max-width: 1024px) {
+  .alert {
+    right: 150px;
+  }
+}
 
-    /* ===========================
-       RESPONSIVENESS
-    =========================== */
-    @media (max-width: 768px) {
-      .contact-container {
-        width: 95%;
-        padding: 30px 25px;
-      }
-      .contact-container h1 {
-        font-size: 1.8rem;
-      }
-    }
+@media (max-width: 768px) {
+  .alert {
+    right: 50px;
+    top: 80px;
+    font-size: 0.95rem;
+    padding: 12px 20px;
+  }
+}
 
-    @media (max-width: 480px) {
-      main {
-        padding-top: 90px;
-      }
-      .contact-container {
-        padding: 25px 20px;
-      }
-      input, button {
-        font-size: 0.9rem;
-      }
-    }
-  </style>
+@media (max-width: 480px) {
+  .alert {
+    top: 70px;
+    right: 20px;
+    font-size: 0.9rem;
+    padding: 10px 18px;
+    text-align: center;
+  }
+}
+</style>
 </head>
 
 <body>
