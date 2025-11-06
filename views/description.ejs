@@ -1,255 +1,924 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-     <link rel="stylesheet" href="/main.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
-   <style>
-     * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
-}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Krishna Camps Activities</title>
+  <link rel="stylesheet" href="/main.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Montserrat", sans-serif;
+    }
 
-body {
-    background: linear-gradient(to bottom right, #f8f6ef,beige);
-}
+    body {
+      background: linear-gradient(to bottom right, #f8f6ef, beige);
+    }
 
-/* Heading */
-.heading {
-  text-align: center;
-  margin-top: 20px;
-  color: #362f6d;
-  font-weight: 700;
-  font-size: 2.5rem;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
+    /* Heading */
+    .heading {
+      text-align: center;
+      margin-top: 20px;
+      color: #362f6d;
+      font-weight: 700;
+      font-size: 2.5rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
 
-/* Main Section */
-.main {
-  width: 80%;
-  height: auto;
-  /* border: 2px solid #fa812f; */
-  border-radius: 10px;
-  padding: 25px;
-  margin: 25px auto;
- /* background-color: #fffdf5;*/
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-}
+    /* Main Section */
+    .main {
+      width: 80%;
+      height: auto;
+      border-radius: 10px;
+      padding: 25px;
+      margin: 25px auto;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
 
-.main:hover {
-  transform: translateY(-4px);
-}
+    .main:hover {
+      transform: translateY(-4px);
+    }
 
-/* Container: text + image */
-.container {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  gap: 40px;
-  flex-wrap: wrap;
-}
+    /* Container: text + image */
+    .container {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
 
-/* Image section */
-.img_con img {
-  width: 90%;
-  max-width: 420px;
-  height: auto;
-  border-radius: 20px;
-  margin-left: 20px;
-  margin-top: 20px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease-in-out;
-}
+    /* Image section */
+    .img_con img {
+      width: 90%;
+      max-width: 420px;
+      height: auto;
+      border-radius: 20px;
+      margin-left: 20px;
+      margin-top: 20px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease-in-out;
+    }
 
-.img_con img:hover {
-  transform: scale(1.04);
-}
+    .img_con img:hover {
+      transform: scale(1.04);
+    }
 
-/* Paragraph text */
-.text p {
-  line-height: 1.8;
-  color: #333;
-  font-size: 1.05rem;
-  text-align: justify;
-  margin-top: 18px;
-}
+    /* Paragraph text */
+    .text p {
+      line-height: 1.8;
+      color: #333;
+      font-size: 1.05rem;
+      text-align: justify;
+      margin-top: 18px;
+    }
 
-/* Section Headings inside main */
-.main h1 {
-  font-weight: 600;
-  margin-top: 25px;
-  color: #3b38a0;
-  border-left: 5px solid #fa812f;
-  padding-left: 10px;
-  letter-spacing: 0.5px;
-}
+    .main h1 {
+      font-weight: 600;
+      margin-top: 25px;
+      color: #3b38a0;
+      border-left: 5px solid #fa812f;
+      padding-left: 10px;
+      letter-spacing: 0.5px;
+    }
 
-/* List items */
-.items {
-  margin-left: 40px;
-  line-height: 1.6;
-  margin-top: 15px;
-  color: #444;
-  font-size: 1rem;
-}
+    .items {
+      margin-left: 40px;
+      line-height: 1.6;
+      margin-top: 15px;
+      color: #444;
+      font-size: 1rem;
+    }
 
-.items li {
-  margin-bottom: 6px;
-  position: relative;
-  padding-left: 10px;
-}
+    .items li {
+      margin-bottom: 6px;
+      position: relative;
+      padding-left: 10px;
+    }
 
-.items li::before {
-  content: "✔";
-  color: #fa812f;
-  font-weight: bold;
-  position: absolute;
-  left: -20px;
-}
+    .items li::before {
+      content: "✔";
+      color: #fa812f;
+      font-weight: bold;
+      position: absolute;
+      left: -20px;
+    }
 
-/* Hover animation for list items */
-.items li:hover {
-  color: #3b38a0;
-  transition: color 0.3s;
-}
+    .items li:hover {
+      color: #3b38a0;
+      transition: color 0.3s;
+    }
 
+    /* Footer Section */
+    footer {
+      background-color: #362f6d;
+      color: white;
+      padding: 40px 20px;
+      margin-top: 50px;
+      text-align: center;
+    }
 
+    footer .footer-content {
+      max-width: 900px;
+      margin: auto;
+    }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-  .main {
-    width: 90%;
-  }
-}
+    footer h2 {
+      font-size: 1.8rem;
+      color: #fa812f;
+      margin-bottom: 15px;
+      letter-spacing: 1px;
+    }
 
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
+    footer p {
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
 
-  .img_con img {
-    width: 95%;
-    margin: 20px 0;
-  }
+    .social-icons {
+      margin: 20px 0;
+    }
 
-  .text p {
-    font-size: 1rem;
-    padding: 0 10px;
-  }
+    .social-icons a {
+      color: white;
+      margin: 0 15px;
+      font-size: 1.6rem;
+      transition: color 0.3s ease;
+    }
 
-  .main h1 {
-    font-size: 1.4rem;
-    text-align: center;
-  }
+    .social-icons a:hover {
+      color: #fa812f;
+    }
 
-  .heading {
-    font-size: 2rem;
-  }
+    footer .email-link {
+      color: #fa812f;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
 
-  .items {
-    margin-left: 20px;
-  }
-}
+    footer .email-link:hover {
+      text-decoration: underline;
+      color: #ffb74d;
+    }
 
-@media (max-width: 480px) {
-  .heading {
-    font-size: 1.6rem;
-  }
+    footer .address {
+      margin-top: 10px;
+      font-size: 0.95rem;
+      color: #ddd;
+      line-height: 1.6;
+    }
 
-  .text p {
-    font-size: 0.95rem;
-  }
+    @media (max-width: 768px) {
+      footer h2 {
+        font-size: 1.5rem;
+      }
 
-  .main {
-    padding: 15px;
-  }
+      footer p, footer .address {
+        font-size: 0.95rem;
+      }
 
-  .img_con img {
-    max-width: 100%;
-  }
-}
-
-   </style>
+      .social-icons a {
+        font-size: 1.4rem;
+        margin: 0 10px;
+      }
+    }
+  </style>
 </head>
 <body>
-   <%- include("partial/nav")%>
+  <%- include("partial/nav") %>
 
+  <!-- 🌿 Archery Section -->
+  <% if (activity === "archery") { %>
     <h1 class="heading">Archery</h1>
     <div class="main">
-    <div class="container">
+      <div class="container">
         <div class="text">
-           <h1>Description</h1>
-          <p> Archery – Immerse yourself in the thrilling world of archery, where precision meets patience and focus becomes
-            your greatest ally. This activity challenges participants to hone their hand-eye coordination,
-            concentration, and control, making every arrow a step toward personal growth. Under the guidance of
-            skilled instructors in a safe and supportive environment, children and adults alike can experience the joy of aiming
-             for the target, learning to adjust their techniques, and celebrating small victories with every successful shot.
-             Beyond skill-building, archery fosters self-confidence,
-           discipline, and a sense of achievement, all while providing an enjoyable, engaging, and memorable outdoor adventure.</p>
+          <h1>Description</h1>
+          <p>Archery – Immerse yourself in the thrilling world of archery, where precision meets patience and focus becomes your greatest ally. This activity challenges participants to hone their hand-eye coordination, concentration, and control, making every arrow a step toward personal growth...</p>
         </div>
-         <div class="img_con">
-             <img src="/pexels-ionatelo-27786385.jpg" alt="Archery image">
-         </div>
-    </div>
-    <h1>Safety Precautions</h1>
-       <ul class="items">
+        <div class="img_con">
+          <img src="/pexels-ionatelo-27786385.jpg" alt="Archery image">
+        </div>
+      </div>
+      <h1>Safety Precautions</h1>
+      <ul class="items">
         <li>Check bows and arrows for damage before use.</li>
         <li>Keep a safe distance from others.</li>
         <li>Always shoot under instructor supervision.</li>
         <li>Maintain proper stance and shooting technique.</li>
-       </ul>
-     <h1>Requirements</h1>
-       <ul class="items">
+      </ul>
+      <h1>Arrangements</h1>
+      <ul class="items">
         <li>Bows</li>
         <li>Arrows</li>
         <li>Targets</li>
         <li>Finger Tabs or Gloves</li>
-       </ul>
+      </ul>
     </div>
+  <% } %>
 
-     <h1 class="heading">Boating</h1>
+  <!-- 🌊 Boating Section -->
+  <% if (activity === "boating") { %>
+    <h1 class="heading">Boating</h1>
     <div class="main">
-    <div class="container">
+      <div class="container">
         <div class="text">
-            <h1>Description</h1>
-          <p> Boating is a refreshing and joyful water activity that allows participants to experience the calmness and beauty
-            of nature while learning coordination, balance, and teamwork. It involves rowing, paddling, or steering a boat
-            across a lake or river, providing both excitement and relaxation. Through boating, participants not only enjoy
-            the thrill of gliding over water but also develop patience, cooperation, and a sense of responsibility. It is
-             a perfect blend of adventure and serenity, offering moments of peace as well as fun challenges. Whether done'
-              solo or with friends, boating creates unforgettable memories and strengthens one’s connection with nature.
-            </p>
+          <h1>Description</h1>
+          <p>Boating is a refreshing and joyful water activity that allows participants to experience the calmness and beauty of nature while learning coordination, balance, and teamwork...</p>
         </div>
-         <div class="img_con">
-             <img src="/two-man-paddling-kayak-lake.jpg" alt="Boating image">
-         </div>
-    </div>
-    <h1>Safety Precautions</h1>
-       <ul class="items">
+        <div class="img_con">
+          <img src="/two-man-paddling-kayak-lake.jpg" alt="Boating image">
+        </div>
+      </div>
+      <h1>Safety Precautions</h1>
+      <ul class="items">
         <li>Always wear a life jacket before boarding the boat.</li>
         <li>Check weather conditions before going boating.</li>
-        <li>Follow the instructor’s or guide’s directions carefully.</li>
-        <li>Carry basic safety gear like ropes, whistle, and first aid kit.</li>
-       </ul>
-     <h1>Requirements</h1>
-       <ul class="items">
+        <li>Follow the instructor’s directions carefully.</li>
+        <li>Carry safety gear like ropes, whistle, and first aid kit.</li>
+      </ul>
+      <h1>Arrangements</h1>
+      <ul class="items">
         <li>Boat or canoe</li>
         <li>Safety ropes</li>
         <li>Paddles or oars</li>
         <li>Life jackets</li>
-       </ul>
- </div>
+      </ul>
+    </div>
+  <% } %>
 
 
+
+  <% if (activity === "magic") { %>
+  <h1 class="heading">Magic Show</h1>
+  <div class="main">
+    <div class="container">
+      <div class="text"><h1>Description</h1>
+      <p>Experience fun and wonder with our live Magic Show! Amazing tricks spark joy, imagination, and curiosity among children.</p></div>
+      <div class="img_con"><img src="/pexels-king-caplis-471600979-33396128.jpg" alt="Magic Show"></div>
+    </div>
+
+    <h1>Safety Precautions</h1>
+    <ul class="items">
+      <li>Only trained magicians handle props.</li>
+      <li>No open flames or harmful materials used.</li>
+      <li>Stage area restricted to performers.</li>
+      <li>Emergency exits kept clear.</li>
+    </ul>
+
+    <h1>Arrangements</h1>
+    <ul class="items">
+      <li>Stage setup and sound system.</li>
+      <li>Decorations and audience seating.</li>
+      <li>Lighting for magical ambiance.</li>
+    </ul>
+  </div>
+  <% } %>
+
+  <!-- =============== COMMANDO NET =============== -->
+  <% if (activity === "commando") { %>
+  <h1 class="heading">Commando Net</h1>
+  <div class="main">
+    <div class="container">
+      <div class="text"><h1>Description</h1>
+      <p>Commando Net challenges kids to climb, crawl, and move through nets — developing courage, balance, and teamwork.</p></div>
+      <div class="img_con"><img src="/girl-playing-with-soccer-net.jpg" alt="Commando Net"></div>
+    </div>
+
+    <h1>Safety Precautions</h1>
+    <ul class="items">
+      <li>Soft landing mats under all nets.</li>
+      <li>Staff assists during climb.</li>
+      <li>Age-appropriate height maintained.</li>
+      <li>Gloves available for grip.</li>
+    </ul>
+
+    <h1>Arrangements</h1>
+    <ul class="items">
+      <li>Thick nylon nets.</li>
+      <li>Support poles and ropes.</li>
+      <li>Safety mats and helmets.</li>
+    </ul>
+  </div>
+  <% } %>
+
+  <!-- =============== POTTERY =============== -->
+  <% if (activity === "pottery") { %>
+  <h1 class="heading">Pottery</h1>
+  <div class="main">
+    <div class="container">
+      <div class="text"><h1>Description</h1>
+      <p>Pottery art lets kids express creativity by shaping and painting clay pieces with gentle hands-on guidance.</p></div>
+      <div class="img_con"><img src="/close-up-woman-painting-clay-pot.jpg" alt="Pottery"></div>
+    </div>
+
+    <h1>Safety Precautions</h1>
+    <ul class="items">
+      <li>Use non-toxic clay and paints.</li>
+      <li>Keep tools away from small children.</li>
+      <li>Instructor supervises throughout.</li>
+    </ul>
+
+    <h1>Arrangements</h1>
+    <ul class="items">
+      <li>Clay and pottery wheels.</li>
+      <li>Aprons and gloves.</li>
+      <li>Paints and brushes.</li>
+      <li>Tables with water supply.</li>
+    </ul>
+  </div>
+  <% } %>
+
+  <!-- =============== RAIN DANCE =============== -->
+  <% if (activity === "rain") { %>
+  <h1 class="heading">Rain Dance</h1>
+  <div class="main">
+    <div class="container">
+      <div class="text"><h1>Description</h1>
+      <p>Enjoy energetic music, colorful lights, and the joy of dancing under artificial rain — the ultimate fun!</p></div>
+      <div class="img_con"><img src="/funny-little-girl-fountain-splashes-water-hot-summer-day (1).jpg" alt="Rain Dance"></div>
+    </div>
+
+    <h1>Safety Precautions</h1>
+    <ul class="items">
+      <li>Non-slippery flooring.</li>
+      <li>Electrical equipment kept away from water.</li>
+      <li>Children monitored constantly.</li>
+      <li>Clean filtered water used.</li>
+    </ul>
+
+    <h1>Arrangements</h1>
+    <ul class="items">
+      <li>Music and lighting setup.</li>
+      <li>Spray shower system.</li>
+      <li>Changing area and towels.</li>
+    </ul>
+  </div>
+  <% } %>
+
+    <!-- =============== SWIMMING POOL =============== -->
+  <% if (activity === "pool") { %>
+  <h1 class="heading">Swimming Pool</h1>
+  <div class="main">
+    <div class="container">
+      <div class="text"><h1>Description</h1>
+      <p>The pool session offers relaxation and fun! Children learn basic swimming, enjoy splash games, and build confidence in water under lifeguard supervision.</p></div>
+      <div class="img_con"><img src="/family-with-boy-enjoying-their-day-swimming-pool.jpg" alt="Swimming Pool"></div>
+    </div>
+
+    <h1>Safety Precautions</h1>
+    <ul class="items">
+      <li>Certified lifeguards on duty.</li>
+      <li>Shallow water area for beginners.</li>
+      <li>Life jackets available for all.</li>
+      <li>No running or diving allowed.</li>
+    </ul>
+
+    <h1>Arrangements</h1>
+    <ul class="items">
+      <li>Filtered, clean pool water.</li>
+      <li>Changing rooms and towels.</li>
+      <li>Inflatable pool toys and rings.</li>
+      <li>First-aid and rescue kits.</li>
+    </ul>
+  </div>
+  <% } %>
+
+  <!-- =============== ZIPLINE =============== -->
+  <% if (activity === "zipline") { %>
+  <h1 class="heading">Zipline</h1>
+  <div class="main">
+    <div class="container">
+      <div class="text"><h1>Description</h1>
+      <p>Ziplining is a thrilling ride that lets children fly through the air safely while developing courage and confidence under professional guidance.</p></div>
+      <div class="img_con"><img src="/brave-boy-having-fun-adventure-park.jpg" alt="Zipline"></div>
+    </div>
+
+    <h1>Safety Precautions</h1>
+    <ul class="items">
+      <li>All gear is quality-checked before use.</li>
+      <li>Harnesses and helmets are mandatory.</li>
+      <li>Staff manages both start and end points.</li>
+      <li>Strict one-at-a-time rule.</li>
+    </ul>
+
+    <h1>Arrangements</h1>
+    <ul class="items">
+      <li>Steel zip cable with braking system.</li>
+      <li>Harnesses, helmets, and gloves.</li>
+      <li>Landing mats and safety net.</li>
+    </ul>
+  </div>
+  <% } %>
+
+  <!-- =============== WALL CLIMBING =============== -->
+  <% if (activity === "climbing") { %>
+  <h1 class="heading">Wall Climbing</h1>
+  <div class="main">
+    <div class="container">
+      <div class="text"><h1>Description</h1>
+      <p>Wall Climbing teaches kids determination and physical balance as they scale colorful artificial walls under supervision.</p></div>
+      <div class="img_con"><img src="/pexels-tima-miroshnichenko-5916212.jpg" alt="Wall Climbing"></div>
+    </div>
+
+    <h1>Safety Precautions</h1>
+    <ul class="items">
+      <li>Harness and helmet compulsory.</li>
+      <li>Instructors handle belay ropes.</li>
+      <li>Soft mats at base for safety.</li>
+      <li>Weight limit maintained for safety.</li>
+    </ul>
+
+    <h1>Arrangements</h1>
+    <ul class="items">
+      <li>Climbing wall with holds.</li>
+      <li>Safety harness and rope systems.</li>
+      <li>Supervised by trained staff.</li>
+    </ul>
+  </div>
+  <% } %>
+
+  <!-- =============== SUMO FIGHT =============== -->
+  <% if (activity === "sumofight") { %>
+  <h1 class="heading">Sumo Fight</h1>
+  <div class="main">
+    <div class="container">
+      <div class="text"><h1>Description</h1>
+      <p>Fun-filled Sumo wrestling where kids wear padded suits and try to push each other out of a ring — laughter guaranteed!</p></div>
+      <div class="img_con"><img src="/6836bdfe9539c7.85113456.webp" alt="Sumo Fight"></div>
+    </div>
+
+    <h1>Safety Precautions</h1>
+    <ul class="items">
+      <li>Padded suits to prevent injury.</li>
+      <li>Soft floor mat for the arena.</li>
+      <li>Matches monitored by staff.</li>
+      <li>Only one match at a time.</li>
+    </ul>
+
+    <h1>Arrangements</h1>
+    <ul class="items">
+      <li>Inflatable Sumo suits.</li>
+      <li>Ring and soft mats.</li>
+      <li>Referee and safety coordinator.</li>
+    </ul>
+  </div>
+  <% } %>
+
+  <!-- =============== GUN SHOOTING =============== -->
+  <% if (activity === "gunshooting") { %>
+  <h1 class="heading">Gun Shooting</h1>
+  <div class="main">
+    <div class="container">
+      <div class="text"><h1>Description</h1>
+      <p>Air gun shooting improves focus and aim. Kids learn discipline and precision while shooting at paper targets safely.</p></div>
+      <div class="img_con"><img src="/shallow-focus-shot-from-male-shooting-gun-gun-range.jpg" alt="Gun Shooting"></div>
+    </div>
+
+    <h1>Safety Precautions</h1>
+    <ul class="items">
+      <li>Use only air guns, no pellets or real bullets.</li>
+      <li>Children shoot one at a time under supervision.</li>
+      <li>All spectators stay behind safety line.</li>
+      <li>Eye protection provided.</li>
+    </ul>
+
+    <h1>Arrangements</h1>
+    <ul class="items">
+      <li>Air guns and paper targets.</li>
+      <li>Safety goggles.</li>
+      <li>Designated shooting range with barrier.</li>
+    </ul>
+  </div>
+  <% } %>
+
+    <!-- =============== SELFIE CORNER =============== -->
+  <% if (activity === "selfie") { %>
+  <h1 class="heading">Selfie Corner</h1>
+  <div class="main">
+    <div class="container">
+      <div class="text">
+        <h1>Description</h1>
+        <p>
+          The Selfie Corner is one of the most vibrant and loved spots at Krishna Camps!
+          Designed with colorful backdrops, creative props, and thematic decorations,
+          it offers children and families the perfect place to capture joyful memories.
+          Whether it’s striking fun poses, group pictures, or solo moments,
+          the Selfie Corner lets everyone express themselves freely while adding a spark of creativity and happiness to their camp experience.
+        </p>
+      </div>
+      <div class="img_con">
+        <img src="/IMG_20230512_093510.jpg" alt="Selfie Corner">
+      </div>
+    </div>
+
+    <h1>Safety Precautions</h1>
+    <ul class="items">
+      <li>Ensure the area remains dry and slip-free.</li>
+      <li>All electrical decorations are safely insulated.</li>
+      <li>Props and stands are sturdy to prevent falls.</li>
+      <li>Children are guided by staff while handling photo props.</li>
+    </ul>
+
+    <h1>Arrangements</h1>
+    <ul class="items">
+      <li>Themed backgrounds and creative lighting setup.</li>
+      <li>Variety of props — hats, frames, masks, and signs.</li>
+      <li>Camera stand and ring light for perfect photos.</li>
+      <li>Supervision by camp staff for smooth coordination.</li>
+    </ul>
+  </div>
+  <% } %>
+
+    <!-- =============== TATTOO ART =============== -->
+  <% if (activity === "tattoo") { %>
+  <h1 class="heading">Tattoo Art</h1>
+  <div class="main">
+    <div class="container">
+      <div class="text">
+        <h1>Description</h1>
+        <p>
+          The Tattoo Art zone at Krishna Camps is where imagination meets creativity!
+          Kids can choose from a wide collection of fun, colorful, and skin-safe designs —
+          from cute cartoon characters and nature patterns to Krishna-inspired motifs.
+          Every tattoo is made using non-toxic, washable colors that are completely safe for children’s delicate skin.
+          It’s a joyful and expressive activity that allows every camper to take home a little piece of art on their hands!
+        </p>
+      </div>
+      <div class="img_con">
+        <img src="/sisters-lying-green-grass-covering-their-eyes-with-tattoos-palm.jpg" alt="Tattoo Art">
+      </div>
+    </div>
+
+    <h1>Safety Precautions</h1>
+    <ul class="items">
+      <li>Only skin-friendly, non-toxic, and washable tattoo colors are used.</li>
+      <li>Each brush and sponge is cleaned after every use to maintain hygiene.</li>
+      <li>Trained instructors assist children during the tattoo process.</li>
+      <li>Immediate skin wash stations are available nearby for safety.</li>
+    </ul>
+
+    <h1>Arrangements</h1>
+    <ul class="items">
+      <li>Dedicated tattoo area with proper seating and shade.</li>
+      <li>Display board showcasing design options for easy selection.</li>
+      <li>All materials organized neatly for hygienic application.</li>
+      <li>Camp staff supervising to ensure fun and safe participation.</li>
+    </ul>
+  </div>
+  <% } %>
+
+
+    <!-- =============== BURMA BRIDGE =============== -->
+  <% if (activity === "burmabridge") { %>
+  <h1 class="heading">Burma Bridge</h1>
+  <div class="main">
+    <div class="container">
+      <div class="text">
+        <h1>Description</h1>
+        <p>
+          The Burma Bridge activity at Krishna Camps is one of the most thrilling and adventurous experiences for children!
+          It consists of a rope bridge suspended between two points, where campers walk carefully balancing themselves while enjoying the excitement of height and movement.
+          This fun-filled activity helps build courage, coordination, and confidence while giving kids a taste of real adventure in a completely safe and supervised setup.
+        </p>
+      </div>
+      <div class="img_con">
+        <img src="/pexels-redes-aventura-amazonia-2152995917-32507021.jpg" alt="Burma Bridge">
+      </div>
+    </div>
+
+    <h1>Safety Precautions</h1>
+    <ul class="items">
+      <li>All ropes, harnesses, and equipment are checked before every session.</li>
+      <li>Children wear safety helmets and belts while crossing the bridge.</li>
+      <li>Supervised by trained adventure instructors at both ends.</li>
+      <li>Soft mats or sand pits are placed below for extra safety.</li>
+      <li>Activity restricted to small groups at a time to avoid crowding.</li>
+    </ul>
+
+    <h1>Arrangements</h1>
+    <ul class="items">
+      <li>High-quality adventure-grade ropes and safety gear.</li>
+      <li>Dedicated area with proper fencing and restricted entry.</li>
+      <li>Camp staff and instructors present throughout the activity.</li>
+      <li>First-aid kit and water station available nearby.</li>
+    </ul>
+  </div>
+  <% } %>
+
+    <!-- =============== ROPE CLIMBING =============== -->
+  <% if (activity === "ropeclimbing") { %>
+  <h1 class="heading">Rope Climbing</h1>
+  <div class="main">
+    <div class="container">
+      <div class="text">
+        <h1>Description</h1>
+        <p>
+          Rope Climbing at Krishna Camps is an exciting activity designed to boost strength, focus, and determination among campers.
+          It challenges children to climb a sturdy vertical rope or a rope net using their balance, endurance, and teamwork spirit.
+          The experience not only builds physical fitness but also encourages confidence, perseverance, and a “never give up” attitude — all while ensuring complete safety under expert supervision.
+        </p>
+      </div>
+      <div class="img_con">
+        <img src="/pexels-alex-hussein-1391461-2685043.jpg" alt="Rope Climbing">
+      </div>
+    </div>
+
+    <h1>Safety Precautions</h1>
+    <ul class="items">
+      <li>Children wear safety harnesses, gloves, and helmets before starting.</li>
+      <li>Trained instructors assist at the base and top for proper guidance.</li>
+      <li>Ropes and climbing structures are inspected daily for durability.</li>
+      <li>Soft safety mats are placed underneath the climbing area.</li>
+      <li>Only one child climbs at a time to maintain safety distance.</li>
+    </ul>
+
+    <h1>Arrangements</h1>
+    <ul class="items">
+      <li>High-quality, adventure-certified climbing ropes and nets.</li>
+      <li>Designated climbing zone with barriers and restricted access.</li>
+      <li>Supervised by professional adventure trainers.</li>
+      <li>First-aid and hydration facilities available near the activity area.</li>
+    </ul>
+  </div>
+  <% } %>
+
+    <!-- =============== FOAM PARTY =============== -->
+  <% if (activity === "foamparty") { %>
+  <h1 class="heading">Foam Party</h1>
+  <div class="main">
+    <div class="container">
+      <div class="text">
+        <h1>Description</h1>
+        <p>
+          The Foam Party at Krishna Camps is where laughter meets bubbles!
+          It’s one of the most fun-filled and refreshing activities designed to make children enjoy a playful, dance-filled experience surrounded by soft, eco-friendly foam.
+          Music, colors, and pure joy fill the air as kids jump, dance, and splash in the bubbly environment — creating memories that sparkle with fun and friendship.
+        </p>
+      </div>
+      <div class="img_con">
+        <img src="/timur-m-6C8FE-Rex_w-unsplash (1).jpg" alt="Foam Party">
+      </div>
+    </div>
+
+    <h1>Safety Precautions</h1>
+    <ul class="items">
+      <li>Only non-toxic, skin-safe, and eco-friendly foam is used.</li>
+      <li>Children are instructed not to run or push inside the foam area.</li>
+      <li>Supervisors and lifeguards monitor the area constantly.</li>
+      <li>Foam zone is kept away from electrical setups and sharp objects.</li>
+      <li>Clean towels and fresh water are available for children afterward.</li>
+    </ul>
+
+    <h1>Arrangements</h1>
+    <ul class="items">
+      <li>Dedicated foam machine with adjustable levels for kids’ safety.</li>
+      <li>Music system for a lively, dance-party vibe.</li>
+      <li>Separate changing area and drying zone near the activity spot.</li>
+      <li>Camp staff ensures smooth coordination and cleanliness.</li>
+    </ul>
+  </div>
+  <% } %>
+
+  <% if (activity === "waterroller") { %>
+  <h1 class="heading">Water Roller</h1>
+  <div class="main">
+    <div class="container">
+      <div class="text">
+        <h1>Description</h1>
+        <p>
+          The Water Roller at Krishna Camps is one of the most thrilling and laughter-filled activities where kids roll, spin, and float over water inside a giant transparent inflatable roller!
+          It gives children the excitement of walking on water safely while improving their balance and coordination.
+          The joy of spinning and splashing makes it an unforgettable adventure that brings endless smiles and fun.
+        </p>
+      </div>
+      <div class="img_con">
+        <img src="/R.jpeg" alt="Water Roller">
+      </div>
+    </div>
+
+    <h1>Safety Precautions</h1>
+    <ul class="items">
+      <li>Only one or two children are allowed inside the roller at a time for safety.</li>
+      <li>All equipment is properly inflated and inspected before every use.</li>
+      <li>Lifeguards and trained staff supervise continuously during the activity.</li>
+      <li>Children must wear life jackets before entering the roller.</li>
+      <li>Water depth is kept shallow and suitable for kids’ safety.</li>
+    </ul>
+
+    <h1>Arrangements</h1>
+    <ul class="items">
+      <li>Clean and well-maintained inflatable water rollers.</li>
+      <li>Designated shallow pool area for the activity.</li>
+      <li>Life jackets and safety gear available for all participants.</li>
+      <li>Staff assistance for entry, rolling, and exit from the water roller.</li>
+      <li>Changing and drying area near the pool zone.</li>
+    </ul>
+  </div>
+<% } %>
+
+<% if (activity === "mountainbike") { %>
+  <h1 class="heading">Mountain Bike</h1>
+  <div class="main">
+    <div class="container">
+      <div class="text">
+        <h1>Description</h1>
+        <p>
+          The Mountain Bike activity at Krishna Camps is perfect for young adventurers who love speed, balance, and the thrill of exploration!
+          Children ride specially designed mountain bikes along safe and exciting camp trails surrounded by nature.
+          It’s a fun-filled way to build confidence, improve coordination, and enjoy the beauty of the outdoors — all while feeling the rush of wind and adventure.
+        </p>
+      </div>
+      <div class="img_con">
+        <img src="/morning-desert-safari-with-quad-bike-tour-jeddah-2235259.jpg" alt="Mountain Bike">
+      </div>
+    </div>
+
+    <h1>Safety Precautions</h1>
+    <ul class="items">
+      <li>Children must wear helmets, knee pads, and elbow guards at all times.</li>
+      <li>All bikes are regularly checked and maintained for safety.</li>
+      <li>Riding paths are clearly marked and monitored by camp staff.</li>
+      <li>Only one rider per bike is allowed; no stunts or racing permitted.</li>
+      <li>Supervisors ensure every participant follows the safety instructions.</li>
+    </ul>
+
+    <h1>Arrangements</h1>
+    <ul class="items">
+      <li>Well-maintained kids’ mountain bikes of different sizes.</li>
+      <li>Dedicated cycling track with natural surroundings.</li>
+      <li>Safety gear provided by the camp before the ride.</li>
+      <li>Trained instructors to guide and assist throughout the activity.</li>
+      <li>Rest area and refreshment spot near the track.</li>
+    </ul>
+  </div>
+<% } %>
+
+<% if (activity === "rivercrossing") { %>
+  <h1 class="heading">River Crossing</h1>
+  <div class="main">
+    <div class="container">
+      <div class="text">
+        <h1>Description</h1>
+        <p>
+          The River Crossing at Krishna Camps is an adventurous challenge where children learn teamwork, courage, and balance while crossing a stream or shallow river using ropes.
+          Guided by trained instructors, kids move from one side to the other with safety harnesses and helmets — feeling the thrill of adventure and the joy of conquering their fears.
+          It’s a perfect mix of excitement and confidence-building in nature’s lap.
+        </p>
+      </div>
+      <div class="img_con">
+        <img src="/images.jpeg"alt="River Crossing">
+      </div>
+    </div>
+
+    <h1>Safety Precautions</h1>
+    <ul class="items">
+      <li>All participants wear helmets, harnesses, and safety gear.</li>
+      <li>Supervision by trained instructors throughout the activity.</li>
+      <li>Ropes and equipment are tested before every session.</li>
+      <li>Activity conducted in shallow, calm water areas suitable for children.</li>
+      <li>Emergency staff and first aid are always on standby.</li>
+    </ul>
+
+    <h1>Arrangements</h1>
+    <ul class="items">
+      <li>Secure rope setup with proper anchor points on both sides.</li>
+      <li>Safety gear including helmets, harnesses, and gloves for all participants.</li>
+      <li>Experienced trainers to guide and assist children step-by-step.</li>
+      <li>Designated viewing area for other campers to cheer their friends.</li>
+      <li>Clean towel and refreshment zone available after the activity.</li>
+    </ul>
+  </div>
+<% } %>
+
+<% if (activity === "mickymouse") { %>
+  <h1 class="heading">Micky Mouse</h1>
+  <div class="main">
+    <div class="container">
+      <div class="text">
+        <h1>Description</h1>
+        <p>
+          The Micky Mouse corner at Krishna Camps is every child’s dream come true!
+          Filled with fun games, cheerful decorations, and everyone’s favorite cartoon character — Micky Mouse — this activity brings endless smiles and laughter.
+          Kids enjoy dancing, clicking pictures, and playing interactive games with Micky, creating magical memories that sparkle with joy and imagination.
+        </p>
+      </div>
+      <div class="img_con">
+        <img src="/download.jpeg" alt="Micky Mouse">
+      </div>
+    </div>
+
+    <h1>Safety Precautions</h1>
+    <ul class="items">
+      <li>All activities are supervised by camp staff to ensure kids’ safety.</li>
+      <li>The Micky costume is worn by trained and friendly camp staff.</li>
+      <li>Children are guided to interact politely and avoid crowding.</li>
+      <li>Clean and comfortable surroundings are maintained at all times.</li>
+      <li>Hydration and rest breaks are provided for all participants.</li>
+    </ul>
+
+    <h1>Arrangements</h1>
+    <ul class="items">
+      <li>Colorful stage setup and themed decorations for Micky Mouse time.</li>
+      <li>Fun music and dance zone for kids to enjoy with Micky.</li>
+      <li>Photo corner for memorable pictures with their favorite character.</li>
+      <li>Interactive games and activities led by Micky and camp coordinators.</li>
+      <li>Small gifts or stickers for participants to take home as souvenirs.</li>
+    </ul>
+  </div>
+<% } %>
+<% if (activity === "dotgame") { %>
+  <h1 class="heading">Dot Game</h1>
+  <div class="main">
+    <div class="container">
+      <div class="text">
+        <h1>Description</h1>
+        <p>
+          The Dot Game at Krishna Camps is a super fun and brain-boosting activity designed to sharpen observation, focus, and teamwork among children.
+          In this interactive game, kids connect dots to form shapes, patterns, or creative designs — all while competing in a friendly and playful environment.
+          It’s a perfect mix of creativity, concentration, and laughter that keeps every camper excited and engaged!
+        </p>
+      </div>
+      <div class="img_con">
+        <img src="/images (1).jpeg" alt="Dot Game">
+      </div>
+    </div>
+
+    <h1>Safety Precautions</h1>
+    <ul class="items">
+      <li>Activity is conducted in a calm indoor setup or shaded area.</li>
+      <li>All materials used are non-toxic and child-safe.</li>
+      <li>Supervisors ensure every participant gets fair turns and space.</li>
+      <li>Children are instructed to play calmly without pushing or running.</li>
+      <li>First-aid and staff support are available on-site.</li>
+    </ul>
+
+    <h1>Arrangements</h1>
+    <ul class="items">
+      <li>Colorful dot boards and sheets for individual or team play.</li>
+      <li>Markers, pens, and drawing tools provided by the camp.</li>
+      <li>Dedicated instructor to explain the rules and guide the activity.</li>
+      <li>Fun challenges and rounds to make the game more exciting.</li>
+      <li>Winners receive small rewards or appreciation badges.</li>
+    </ul>
+  </div>
+<% } %>
+
+<% if (activity === "commandocrossing") { %>
+  <h1 class="heading">Commando Crossing</h1>
+  <div class="main">
+    <div class="container">
+      <div class="text">
+        <h1>Description</h1>
+        <p>
+          The Commando Crossing at Krishna Camps is one of the most thrilling and confidence-building adventure activities for children!
+          Inspired by real commando training, kids cross over ropes or obstacles using their strength, focus, and balance — just like real heroes in action.
+          It helps improve endurance, coordination, and teamwork while giving them a taste of true adventure and discipline in a fun-filled way.
+        </p>
+      </div>
+      <div class="img_con">
+        <img src="/Commando-Crossing.webp" alt="Commando Crossing">
+      </div>
+    </div>
+
+    <h1>Safety Precautions</h1>
+    <ul class="items">
+      <li>Children wear safety harnesses, helmets, and gloves during the activity.</li>
+      <li>Supervised at all times by trained adventure instructors.</li>
+      <li>All ropes and structures are checked and maintained regularly.</li>
+      <li>Activity area is cushioned or set up over soft ground for extra safety.</li>
+      <li>First-aid support and hydration breaks are always available.</li>
+    </ul>
+
+    <h1>Arrangements</h1>
+    <ul class="items">
+      <li>Strong rope setup for commando-style crossings and balance exercises.</li>
+      <li>Dedicated adventure zone with safety gear for all participants.</li>
+      <li>Guidance and encouragement from trained instructors.</li>
+      <li>Step-by-step practice sessions for beginners.</li>
+      <li>Certificates or badges for those completing the challenge successfully.</li>
+    </ul>
+  </div>
+<% } %>
+
+
+
+
+
+
+
+
+
+
+  <script src="https://kit.fontawesome.com/5e5f2b8f9d.js" crossorigin="anonymous"></script>
 </body>
 </html>

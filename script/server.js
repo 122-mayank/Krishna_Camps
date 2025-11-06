@@ -42,7 +42,7 @@ const transporter = nodemailer.createTransport(
 
 // 📨 Handle form submission
 app.post('/submit', async (req, res) => {
-  const { schoolname, email, contact, designation } = req.body;
+  const { name ,schoolname, email, contact, designation } = req.body;
 
   if(contact.length != 10){
        res.status(500).send('Error');
@@ -54,6 +54,7 @@ app.post('/submit', async (req, res) => {
     subject: `New Contact Form Submission from ${schoolname}`,
     html: `
       <h2>New Contact Form Submission</h2>
+      <p><strong>Name:</strong>${name}</p>
       <p><strong>School Name:</strong> ${schoolname}</p>
       <p><strong>Email:</strong> ${email}</p>
       <p><strong>Contact:</strong> ${contact}</p>
@@ -71,6 +72,13 @@ app.post('/submit', async (req, res) => {
         res.status(500).send('Error');
     }
 });
+
+
+app.get('/about/:activity',(req,res)=>{
+       const {activity} = req.params;
+       res.render('description',{activity});
+});
+
 
 
 const PORT = 3002;
