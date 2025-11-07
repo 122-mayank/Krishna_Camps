@@ -80,6 +80,11 @@ app.get('/about/:activity',(req,res)=>{
 });
 
 
+app.get('/sitemap.xml', (req, res) => {
+  res.sendFile(path.join(__dirname, '../', 'views', 'sitemap.xml'));
+});
+
+
 
 const PORT = 3002;
 app.listen(PORT,()=>{
