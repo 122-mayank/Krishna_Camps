@@ -20,7 +20,7 @@
     <div class="overlay">
       <h1>Summer Adventure Awaits!</h1>
       <p>Fun-filled camps designed exclusively for school students</p>
-      <button onclick="window.location.href='/activities'">Explore Programs</button>
+      <button onclick="window.location.href='/contact-us'">Enquiry</button>
     </div>
   </header>
 
@@ -50,8 +50,13 @@
       </div>
     </div>
   </div>
-
+  <div class="more-activities">
+    <button onclick="window.location.href='/activities'">
+      More Activities <span class="arrow">→</span>
+    </button>
+  </div>
    <section class="third">
+
            <h1>What Do We Do?</h1>
           <div class="text_img">
                <div class="text">At Krishna Camps, every day is packed with thrilling adventure
@@ -93,11 +98,68 @@
           </div>
    </section>
 
+   <section class="rating-section">
+  <h2>Rate Your Experience</h2>
+  <p>We value your feedback! Tap the stars to share your experience.</p>
+
+  <div class="star-rating">
+    <span class="star" data-value="1">★</span>
+    <span class="star" data-value="2">★</span>
+    <span class="star" data-value="3">★</span>
+    <span class="star" data-value="4">★</span>
+    <span class="star" data-value="5">★</span>
+  </div>
+
+  <div class="rating-message"></div>
+</section>
+
+
 
   <!-- Footer -->
   <footer>
      <%- include('partial/footer') %>
   </footer>
+
+  <script>
+  const stars = document.querySelectorAll('.star');
+  const message = document.querySelector('.rating-message');
+
+  stars.forEach(star => {
+    // Hover effect
+    star.addEventListener('mouseover', () => {
+      resetStars();
+      highlightStars(star.dataset.value);
+    });
+
+    star.addEventListener('mouseout', resetStars);
+
+    // Click to select
+    star.addEventListener('click', () => {
+      setRating(star.dataset.value);
+    });
+  });
+
+  let selectedRating = 0;
+
+  function highlightStars(rating) {
+    stars.forEach(star => {
+      if (star.dataset.value <= rating) star.classList.add('hovered');
+    });
+  }
+
+  function resetStars() {
+    stars.forEach(star => star.classList.remove('hovered'));
+  }
+
+  function setRating(rating) {
+    selectedRating = rating;
+    stars.forEach(star => {
+      star.classList.toggle('selected', star.dataset.value <= rating);
+    });
+
+    message.textContent = `You rated us ${rating} star${rating > 1 ? 's' : ''}! 🌟`;
+  }
+</script>
 
 </body>
 </html>

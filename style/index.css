@@ -102,6 +102,61 @@ body {
 .third {
   padding: 40px 20px;
 }
+/* === More Activities Button Styling === */
+.more-activities {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0;
+  opacity: 0;
+  transform: translateY(-30px);
+  animation: slideDown 1s ease-out forwards;
+}
+
+.more-activities button {
+  background: linear-gradient(135deg, #0C2B4E, #0056D2);
+  color: white;
+  border: none;
+  padding: 14px 40px;
+  font-size: 1.1rem;
+  border-radius: 40px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+
+.more-activities button:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, #0056D2, #003C99);
+  box-shadow: 0 6px 20px rgba(0, 86, 210, 0.4);
+}
+
+.more-activities .arrow {
+  font-size: 1.3rem;
+  transition: transform 0.3s ease;
+}
+
+.more-activities button:hover .arrow {
+  transform: translateX(6px);
+}
+
+/* Smooth top-to-bottom animation when triggered */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
 .third h1 {
   text-align: center;
   color: #362f6d;
@@ -178,6 +233,61 @@ body {
   color: #362f6d;
   font-weight: 600;
 }
+/* === Interactive Rating Section === */
+.rating-section {
+  text-align: center;
+  background: linear-gradient(135deg, #f9fbff, #eef5ff);
+  padding: 60px 20px;
+  margin-top: 60px;
+  border-top: 2px solid rgba(244, 246, 248, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.1);
+
+}
+
+.rating-section h2 {
+  font-size: 2rem;
+  color: #003c99;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.rating-section p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.star-rating {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.star {
+  color: #d3d3d3;
+  transition: color 0.3s, transform 0.2s;
+}
+
+.star:hover,
+.star.hovered {
+  color: #007bff;
+  transform: scale(1.2);
+}
+
+.star.selected {
+  color: #007bff;
+}
+
+.rating-message {
+  margin-top: 15px;
+  font-size: 1.1rem;
+  color: #003c99;
+  font-weight: 500;
+}
+
 
 /* Footer */
 

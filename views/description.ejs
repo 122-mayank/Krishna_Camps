@@ -8,190 +8,243 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet" />
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Montserrat", sans-serif;
-    }
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+  }
 
-    body {
-      background: linear-gradient(to bottom right, #f8f6ef, beige);
-    }
+  body {
+    background: linear-gradient(to bottom right, #ffffff, #f5f5dc);
+  }
 
-    /* Heading */
+  /* 🌿 Page Heading */
+  .heading {
+    text-align: center;
+    margin: 40px 0 25px;
+    color: #362f6d;
+    font-weight: 800;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* 🌿 Main Activity Section */
+  .main {
+    width: 85%;
+    background: #fff;
+    border-radius: 15px;
+    padding: 35px;
+    margin: 25px auto 60px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+     animation: slideFromTop 0.8s ease-out both;
+  }
+
+  .main:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+  }
+
+  /* 🌿 Flex Container (Column Layout) */
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+
+  /* 🌿 Image Section */
+  .img_con img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 20px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+  }
+
+  .img_con img:hover {
+    transform: scale(1.04);
+  }
+
+  /* 🌿 Description Section */
+  .text {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .text h1 {
+    font-weight: 600;
+    color: #3b38a0;
+    border-left: 5px solid #fa812f;
+    padding-left: 12px;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+  }
+
+  .text p {
+    line-height: 1.8;
+    color: #333;
+    font-size: 1.05rem;
+    text-align: justify;
+    margin-top: 10px;
+  }
+
+  /* 🌿 Safety Precautions Section */
+  .main h1 {
+    font-weight: 600;
+    color: #3b38a0;
+    border-left: 5px solid #fa812f;
+    padding-left: 12px;
+    letter-spacing: 0.5px;
+    margin: 25px 0 15px;
+  }
+
+  .items {
+    margin-left: 40px;
+    line-height: 1.8;
+    color: #444;
+    font-size: 1rem;
+    list-style: none;
+  }
+
+  .items li {
+    position: relative;
+    margin-bottom: 8px;
+    padding-left: 25px;
+  }
+
+  .items li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #fa812f;
+    font-weight: bold;
+  }
+
+  .items li:hover {
+    color: #3b38a0;
+    transition: color 0.3s ease;
+  }
+
+  /* 🌿 Footer Section */
+  footer {
+    background-color: #362f6d;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  footer .footer-content {
+    max-width: 900px;
+    margin: auto;
+  }
+
+  footer h2 {
+    font-size: 1.8rem;
+    color: #fa812f;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+  }
+
+  footer p {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 15px;
+  }
+
+  .social-icons {
+    margin: 20px 0;
+  }
+
+  .social-icons a {
+    color: white;
+    margin: 0 12px;
+    font-size: 1.6rem;
+    transition: color 0.3s ease;
+  }
+
+  .social-icons a:hover {
+    color: #fa812f;
+  }
+
+  footer .email-link {
+    color: #fa812f;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+
+  footer .email-link:hover {
+    text-decoration: underline;
+    color: #ffb74d;
+  }
+
+  footer .address {
+    margin-top: 10px;
+    font-size: 0.95rem;
+    color: #ddd;
+    line-height: 1.6;
+  }
+
+  @keyframes slideFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+  /* 🌿 Responsive Design */
+  @media (max-width: 992px) {
     .heading {
-      text-align: center;
-      margin-top: 20px;
-      color: #362f6d;
-      font-weight: 700;
-      font-size: 2.5rem;
-      letter-spacing: 1px;
-      text-transform: uppercase;
+      font-size: 2rem;
     }
 
-    /* Main Section */
     .main {
-      width: 80%;
-      height: auto;
-      border-radius: 10px;
-      padding: 25px;
-      margin: 25px auto;
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s ease;
-    }
-
-    .main:hover {
-      transform: translateY(-4px);
-    }
-
-    /* Container: text + image */
-    .container {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      gap: 40px;
-      flex-wrap: wrap;
-    }
-
-    /* Image section */
-    .img_con img {
       width: 90%;
-      max-width: 420px;
-      height: auto;
-      border-radius: 20px;
-      margin-left: 20px;
-      margin-top: 20px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-      transition: transform 0.3s ease-in-out;
+      padding: 25px;
     }
 
-    .img_con img:hover {
-      transform: scale(1.04);
+    .img_con img {
+      max-width: 500px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .heading {
+      font-size: 1.7rem;
     }
 
-    /* Paragraph text */
     .text p {
-      line-height: 1.8;
-      color: #333;
-      font-size: 1.05rem;
-      text-align: justify;
-      margin-top: 18px;
-    }
-
-    .main h1 {
-      font-weight: 600;
-      margin-top: 25px;
-      color: #3b38a0;
-      border-left: 5px solid #fa812f;
-      padding-left: 10px;
-      letter-spacing: 0.5px;
+      font-size: 0.95rem;
     }
 
     .items {
-      margin-left: 40px;
-      line-height: 1.6;
-      margin-top: 15px;
-      color: #444;
-      font-size: 1rem;
-    }
-
-    .items li {
-      margin-bottom: 6px;
-      position: relative;
-      padding-left: 10px;
-    }
-
-    .items li::before {
-      content: "✔";
-      color: #fa812f;
-      font-weight: bold;
-      position: absolute;
-      left: -20px;
-    }
-
-    .items li:hover {
-      color: #3b38a0;
-      transition: color 0.3s;
-    }
-
-    /* Footer Section */
-    footer {
-      background-color: #362f6d;
-      color: white;
-      padding: 40px 20px;
-      margin-top: 50px;
-      text-align: center;
-    }
-
-    footer .footer-content {
-      max-width: 900px;
-      margin: auto;
+      margin-left: 25px;
     }
 
     footer h2 {
-      font-size: 1.8rem;
-      color: #fa812f;
-      margin-bottom: 15px;
-      letter-spacing: 1px;
+      font-size: 1.4rem;
     }
 
-    footer p {
-      font-size: 1rem;
-      line-height: 1.8;
-      margin-bottom: 15px;
-    }
-
-    .social-icons {
-      margin: 20px 0;
+    footer p,
+    footer .address {
+      font-size: 0.9rem;
     }
 
     .social-icons a {
-      color: white;
-      margin: 0 15px;
-      font-size: 1.6rem;
-      transition: color 0.3s ease;
+      font-size: 1.3rem;
     }
+  }
+</style>
 
-    .social-icons a:hover {
-      color: #fa812f;
-    }
 
-    footer .email-link {
-      color: #fa812f;
-      text-decoration: none;
-      font-weight: 600;
-      transition: 0.3s;
-    }
-
-    footer .email-link:hover {
-      text-decoration: underline;
-      color: #ffb74d;
-    }
-
-    footer .address {
-      margin-top: 10px;
-      font-size: 0.95rem;
-      color: #ddd;
-      line-height: 1.6;
-    }
-
-    @media (max-width: 768px) {
-      footer h2 {
-        font-size: 1.5rem;
-      }
-
-      footer p, footer .address {
-        font-size: 0.95rem;
-      }
-
-      .social-icons a {
-        font-size: 1.4rem;
-        margin: 0 10px;
-      }
-    }
-  </style>
 </head>
 <body>
   <%- include("partial/nav") %>
@@ -201,13 +254,14 @@
     <h1 class="heading">Archery</h1>
     <div class="main">
       <div class="container">
+        <div class="img_con">
+          <img src="/pexels-ionatelo-27786385.jpg" alt="Archery image">
+        </div>
         <div class="text">
           <h1>Description</h1>
           <p>Archery – Immerse yourself in the thrilling world of archery, where precision meets patience and focus becomes your greatest ally. This activity challenges participants to hone their hand-eye coordination, concentration, and control, making every arrow a step toward personal growth...</p>
         </div>
-        <div class="img_con">
-          <img src="/pexels-ionatelo-27786385.jpg" alt="Archery image">
-        </div>
+
       </div>
       <h1>Safety Precautions</h1>
       <ul class="items">
@@ -216,13 +270,7 @@
         <li>Always shoot under instructor supervision.</li>
         <li>Maintain proper stance and shooting technique.</li>
       </ul>
-      <h1>Arrangements</h1>
-      <ul class="items">
-        <li>Bows</li>
-        <li>Arrows</li>
-        <li>Targets</li>
-        <li>Finger Tabs or Gloves</li>
-      </ul>
+
     </div>
   <% } %>
 
@@ -231,13 +279,14 @@
     <h1 class="heading">Boating</h1>
     <div class="main">
       <div class="container">
+         <div class="img_con">
+          <img src="/two-man-paddling-kayak-lake.jpg" alt="Boating image">
+        </div>
         <div class="text">
           <h1>Description</h1>
           <p>Boating is a refreshing and joyful water activity that allows participants to experience the calmness and beauty of nature while learning coordination, balance, and teamwork...</p>
         </div>
-        <div class="img_con">
-          <img src="/two-man-paddling-kayak-lake.jpg" alt="Boating image">
-        </div>
+
       </div>
       <h1>Safety Precautions</h1>
       <ul class="items">
@@ -246,13 +295,7 @@
         <li>Follow the instructor’s directions carefully.</li>
         <li>Carry safety gear like ropes, whistle, and first aid kit.</li>
       </ul>
-      <h1>Arrangements</h1>
-      <ul class="items">
-        <li>Boat or canoe</li>
-        <li>Safety ropes</li>
-        <li>Paddles or oars</li>
-        <li>Life jackets</li>
-      </ul>
+
     </div>
   <% } %>
 
@@ -262,9 +305,10 @@
   <h1 class="heading">Magic Show</h1>
   <div class="main">
     <div class="container">
+       <div class="img_con"><img src="/pexels-king-caplis-471600979-33396128.jpg" alt="Magic Show"></div>
       <div class="text"><h1>Description</h1>
       <p>Experience fun and wonder with our live Magic Show! Amazing tricks spark joy, imagination, and curiosity among children.</p></div>
-      <div class="img_con"><img src="/pexels-king-caplis-471600979-33396128.jpg" alt="Magic Show"></div>
+
     </div>
 
     <h1>Safety Precautions</h1>
@@ -275,12 +319,7 @@
       <li>Emergency exits kept clear.</li>
     </ul>
 
-    <h1>Arrangements</h1>
-    <ul class="items">
-      <li>Stage setup and sound system.</li>
-      <li>Decorations and audience seating.</li>
-      <li>Lighting for magical ambiance.</li>
-    </ul>
+
   </div>
   <% } %>
 
@@ -289,9 +328,10 @@
   <h1 class="heading">Commando Net</h1>
   <div class="main">
     <div class="container">
+      <div class="img_con"><img src="/girl-playing-with-soccer-net.jpg" alt="Commando Net"></div>
       <div class="text"><h1>Description</h1>
       <p>Commando Net challenges kids to climb, crawl, and move through nets — developing courage, balance, and teamwork.</p></div>
-      <div class="img_con"><img src="/girl-playing-with-soccer-net.jpg" alt="Commando Net"></div>
+
     </div>
 
     <h1>Safety Precautions</h1>
@@ -302,12 +342,7 @@
       <li>Gloves available for grip.</li>
     </ul>
 
-    <h1>Arrangements</h1>
-    <ul class="items">
-      <li>Thick nylon nets.</li>
-      <li>Support poles and ropes.</li>
-      <li>Safety mats and helmets.</li>
-    </ul>
+
   </div>
   <% } %>
 
@@ -316,25 +351,24 @@
   <h1 class="heading">Pottery</h1>
   <div class="main">
     <div class="container">
-      <div class="text"><h1>Description</h1>
-      <p>Pottery art lets kids express creativity by shaping and painting clay pieces with gentle hands-on guidance.</p></div>
-      <div class="img_con"><img src="/close-up-woman-painting-clay-pot.jpg" alt="Pottery"></div>
+       <div class="img_con">
+        <img src="/close-up-woman-painting-clay-pot.jpg" alt="Pottery">
+       </div>
+      <div class="text">
+        <h1>Description</h1>
+        <p>Pottery art lets kids express creativity by shaping and painting clay pieces with gentle hands-on guidance.</p>
+      </div>
+
     </div>
 
-    <h1>Safety Precautions</h1>
-    <ul class="items">
+    <h1 style="margin-left: 45px;">Safety Precautions</h1>
+    <ul class="items"  style="margin-left: 60px;">
       <li>Use non-toxic clay and paints.</li>
       <li>Keep tools away from small children.</li>
       <li>Instructor supervises throughout.</li>
     </ul>
 
-    <h1>Arrangements</h1>
-    <ul class="items">
-      <li>Clay and pottery wheels.</li>
-      <li>Aprons and gloves.</li>
-      <li>Paints and brushes.</li>
-      <li>Tables with water supply.</li>
-    </ul>
+
   </div>
   <% } %>
 
@@ -343,9 +377,12 @@
   <h1 class="heading">Rain Dance</h1>
   <div class="main">
     <div class="container">
-      <div class="text"><h1>Description</h1>
+       <div class="img_con">
+        <img src="/funny-little-girl-fountain-splashes-water-hot-summer-day (1).jpg" alt="Rain Dance">
+      </div>
+      <div class="text"  ><h1 >Description</h1>
       <p>Enjoy energetic music, colorful lights, and the joy of dancing under artificial rain — the ultimate fun!</p></div>
-      <div class="img_con"><img src="/funny-little-girl-fountain-splashes-water-hot-summer-day (1).jpg" alt="Rain Dance"></div>
+
     </div>
 
     <h1>Safety Precautions</h1>
@@ -356,12 +393,7 @@
       <li>Clean filtered water used.</li>
     </ul>
 
-    <h1>Arrangements</h1>
-    <ul class="items">
-      <li>Music and lighting setup.</li>
-      <li>Spray shower system.</li>
-      <li>Changing area and towels.</li>
-    </ul>
+
   </div>
   <% } %>
 
@@ -370,9 +402,12 @@
   <h1 class="heading">Swimming Pool</h1>
   <div class="main">
     <div class="container">
+      <div class="img_con">
+        <img src="/family-with-boy-enjoying-their-day-swimming-pool.jpg" alt="Swimming Pool">
+      </div>
       <div class="text"><h1>Description</h1>
       <p>The pool session offers relaxation and fun! Children learn basic swimming, enjoy splash games, and build confidence in water under lifeguard supervision.</p></div>
-      <div class="img_con"><img src="/family-with-boy-enjoying-their-day-swimming-pool.jpg" alt="Swimming Pool"></div>
+
     </div>
 
     <h1>Safety Precautions</h1>
@@ -383,13 +418,7 @@
       <li>No running or diving allowed.</li>
     </ul>
 
-    <h1>Arrangements</h1>
-    <ul class="items">
-      <li>Filtered, clean pool water.</li>
-      <li>Changing rooms and towels.</li>
-      <li>Inflatable pool toys and rings.</li>
-      <li>First-aid and rescue kits.</li>
-    </ul>
+
   </div>
   <% } %>
 
@@ -398,9 +427,12 @@
   <h1 class="heading">Zipline</h1>
   <div class="main">
     <div class="container">
+      <div class="img_con">
+        <img src="/brave-boy-having-fun-adventure-park.jpg" alt="Zipline">
+      </div>
       <div class="text"><h1>Description</h1>
       <p>Ziplining is a thrilling ride that lets children fly through the air safely while developing courage and confidence under professional guidance.</p></div>
-      <div class="img_con"><img src="/brave-boy-having-fun-adventure-park.jpg" alt="Zipline"></div>
+
     </div>
 
     <h1>Safety Precautions</h1>
@@ -411,12 +443,7 @@
       <li>Strict one-at-a-time rule.</li>
     </ul>
 
-    <h1>Arrangements</h1>
-    <ul class="items">
-      <li>Steel zip cable with braking system.</li>
-      <li>Harnesses, helmets, and gloves.</li>
-      <li>Landing mats and safety net.</li>
-    </ul>
+
   </div>
   <% } %>
 
@@ -425,9 +452,12 @@
   <h1 class="heading">Wall Climbing</h1>
   <div class="main">
     <div class="container">
+       <div class="img_con">
+        <img src="/pexels-tima-miroshnichenko-5916212.jpg" alt="Wall Climbing">
+      </div>
       <div class="text"><h1>Description</h1>
       <p>Wall Climbing teaches kids determination and physical balance as they scale colorful artificial walls under supervision.</p></div>
-      <div class="img_con"><img src="/pexels-tima-miroshnichenko-5916212.jpg" alt="Wall Climbing"></div>
+
     </div>
 
     <h1>Safety Precautions</h1>
@@ -438,12 +468,7 @@
       <li>Weight limit maintained for safety.</li>
     </ul>
 
-    <h1>Arrangements</h1>
-    <ul class="items">
-      <li>Climbing wall with holds.</li>
-      <li>Safety harness and rope systems.</li>
-      <li>Supervised by trained staff.</li>
-    </ul>
+
   </div>
   <% } %>
 
@@ -452,9 +477,12 @@
   <h1 class="heading">Sumo Fight</h1>
   <div class="main">
     <div class="container">
+       <div class="img_con">
+        <img src="/6836bdfe9539c7.85113456.webp" alt="Sumo Fight">
+      </div>
       <div class="text"><h1>Description</h1>
       <p>Fun-filled Sumo wrestling where kids wear padded suits and try to push each other out of a ring — laughter guaranteed!</p></div>
-      <div class="img_con"><img src="/6836bdfe9539c7.85113456.webp" alt="Sumo Fight"></div>
+
     </div>
 
     <h1>Safety Precautions</h1>
@@ -465,12 +493,7 @@
       <li>Only one match at a time.</li>
     </ul>
 
-    <h1>Arrangements</h1>
-    <ul class="items">
-      <li>Inflatable Sumo suits.</li>
-      <li>Ring and soft mats.</li>
-      <li>Referee and safety coordinator.</li>
-    </ul>
+
   </div>
   <% } %>
 
@@ -479,9 +502,12 @@
   <h1 class="heading">Gun Shooting</h1>
   <div class="main">
     <div class="container">
+      <div class="img_con">
+        <img src="/shallow-focus-shot-from-male-shooting-gun-gun-range.jpg" alt="Gun Shooting">
+      </div>
       <div class="text"><h1>Description</h1>
       <p>Air gun shooting improves focus and aim. Kids learn discipline and precision while shooting at paper targets safely.</p></div>
-      <div class="img_con"><img src="/shallow-focus-shot-from-male-shooting-gun-gun-range.jpg" alt="Gun Shooting"></div>
+
     </div>
 
     <h1>Safety Precautions</h1>
@@ -492,12 +518,7 @@
       <li>Eye protection provided.</li>
     </ul>
 
-    <h1>Arrangements</h1>
-    <ul class="items">
-      <li>Air guns and paper targets.</li>
-      <li>Safety goggles.</li>
-      <li>Designated shooting range with barrier.</li>
-    </ul>
+
   </div>
   <% } %>
 
@@ -506,6 +527,9 @@
   <h1 class="heading">Selfie Corner</h1>
   <div class="main">
     <div class="container">
+      <div class="img_con">
+        <img src="/IMG_20230512_093510.jpg" alt="Selfie Corner">
+      </div>
       <div class="text">
         <h1>Description</h1>
         <p>
@@ -516,9 +540,7 @@
           the Selfie Corner lets everyone express themselves freely while adding a spark of creativity and happiness to their camp experience.
         </p>
       </div>
-      <div class="img_con">
-        <img src="/IMG_20230512_093510.jpg" alt="Selfie Corner">
-      </div>
+
     </div>
 
     <h1>Safety Precautions</h1>
@@ -529,13 +551,7 @@
       <li>Children are guided by staff while handling photo props.</li>
     </ul>
 
-    <h1>Arrangements</h1>
-    <ul class="items">
-      <li>Themed backgrounds and creative lighting setup.</li>
-      <li>Variety of props — hats, frames, masks, and signs.</li>
-      <li>Camera stand and ring light for perfect photos.</li>
-      <li>Supervision by camp staff for smooth coordination.</li>
-    </ul>
+
   </div>
   <% } %>
 
@@ -544,6 +560,9 @@
   <h1 class="heading">Tattoo Art</h1>
   <div class="main">
     <div class="container">
+       <div class="img_con">
+        <img src="/sisters-lying-green-grass-covering-their-eyes-with-tattoos-palm.jpg" alt="Tattoo Art">
+      </div>
       <div class="text">
         <h1>Description</h1>
         <p>
@@ -554,9 +573,7 @@
           It’s a joyful and expressive activity that allows every camper to take home a little piece of art on their hands!
         </p>
       </div>
-      <div class="img_con">
-        <img src="/sisters-lying-green-grass-covering-their-eyes-with-tattoos-palm.jpg" alt="Tattoo Art">
-      </div>
+
     </div>
 
     <h1>Safety Precautions</h1>
@@ -567,13 +584,7 @@
       <li>Immediate skin wash stations are available nearby for safety.</li>
     </ul>
 
-    <h1>Arrangements</h1>
-    <ul class="items">
-      <li>Dedicated tattoo area with proper seating and shade.</li>
-      <li>Display board showcasing design options for easy selection.</li>
-      <li>All materials organized neatly for hygienic application.</li>
-      <li>Camp staff supervising to ensure fun and safe participation.</li>
-    </ul>
+
   </div>
   <% } %>
 
@@ -583,6 +594,9 @@
   <h1 class="heading">Burma Bridge</h1>
   <div class="main">
     <div class="container">
+       <div class="img_con">
+        <img src="/pexels-redes-aventura-amazonia-2152995917-32507021.jpg" alt="Burma Bridge">
+      </div>
       <div class="text">
         <h1>Description</h1>
         <p>
@@ -591,9 +605,7 @@
           This fun-filled activity helps build courage, coordination, and confidence while giving kids a taste of real adventure in a completely safe and supervised setup.
         </p>
       </div>
-      <div class="img_con">
-        <img src="/pexels-redes-aventura-amazonia-2152995917-32507021.jpg" alt="Burma Bridge">
-      </div>
+
     </div>
 
     <h1>Safety Precautions</h1>
@@ -605,13 +617,7 @@
       <li>Activity restricted to small groups at a time to avoid crowding.</li>
     </ul>
 
-    <h1>Arrangements</h1>
-    <ul class="items">
-      <li>High-quality adventure-grade ropes and safety gear.</li>
-      <li>Dedicated area with proper fencing and restricted entry.</li>
-      <li>Camp staff and instructors present throughout the activity.</li>
-      <li>First-aid kit and water station available nearby.</li>
-    </ul>
+
   </div>
   <% } %>
 
@@ -620,6 +626,9 @@
   <h1 class="heading">Rope Climbing</h1>
   <div class="main">
     <div class="container">
+       <div class="img_con">
+        <img src="/pexels-alex-hussein-1391461-2685043.jpg" alt="Rope Climbing">
+      </div>
       <div class="text">
         <h1>Description</h1>
         <p>
@@ -628,9 +637,7 @@
           The experience not only builds physical fitness but also encourages confidence, perseverance, and a “never give up” attitude — all while ensuring complete safety under expert supervision.
         </p>
       </div>
-      <div class="img_con">
-        <img src="/pexels-alex-hussein-1391461-2685043.jpg" alt="Rope Climbing">
-      </div>
+
     </div>
 
     <h1>Safety Precautions</h1>
@@ -642,13 +649,7 @@
       <li>Only one child climbs at a time to maintain safety distance.</li>
     </ul>
 
-    <h1>Arrangements</h1>
-    <ul class="items">
-      <li>High-quality, adventure-certified climbing ropes and nets.</li>
-      <li>Designated climbing zone with barriers and restricted access.</li>
-      <li>Supervised by professional adventure trainers.</li>
-      <li>First-aid and hydration facilities available near the activity area.</li>
-    </ul>
+
   </div>
   <% } %>
 
@@ -657,6 +658,9 @@
   <h1 class="heading">Foam Party</h1>
   <div class="main">
     <div class="container">
+      <div class="img_con">
+        <img src="/timur-m-6C8FE-Rex_w-unsplash (1).jpg" alt="Foam Party">
+      </div>
       <div class="text">
         <h1>Description</h1>
         <p>
@@ -665,9 +669,7 @@
           Music, colors, and pure joy fill the air as kids jump, dance, and splash in the bubbly environment — creating memories that sparkle with fun and friendship.
         </p>
       </div>
-      <div class="img_con">
-        <img src="/timur-m-6C8FE-Rex_w-unsplash (1).jpg" alt="Foam Party">
-      </div>
+
     </div>
 
     <h1>Safety Precautions</h1>
@@ -679,13 +681,7 @@
       <li>Clean towels and fresh water are available for children afterward.</li>
     </ul>
 
-    <h1>Arrangements</h1>
-    <ul class="items">
-      <li>Dedicated foam machine with adjustable levels for kids’ safety.</li>
-      <li>Music system for a lively, dance-party vibe.</li>
-      <li>Separate changing area and drying zone near the activity spot.</li>
-      <li>Camp staff ensures smooth coordination and cleanliness.</li>
-    </ul>
+
   </div>
   <% } %>
 
@@ -693,6 +689,9 @@
   <h1 class="heading">Water Roller</h1>
   <div class="main">
     <div class="container">
+        <div class="img_con">
+        <img src="/R.jpeg" alt="Water Roller">
+      </div>
       <div class="text">
         <h1>Description</h1>
         <p>
@@ -701,9 +700,7 @@
           The joy of spinning and splashing makes it an unforgettable adventure that brings endless smiles and fun.
         </p>
       </div>
-      <div class="img_con">
-        <img src="/R.jpeg" alt="Water Roller">
-      </div>
+
     </div>
 
     <h1>Safety Precautions</h1>
@@ -715,14 +712,7 @@
       <li>Water depth is kept shallow and suitable for kids’ safety.</li>
     </ul>
 
-    <h1>Arrangements</h1>
-    <ul class="items">
-      <li>Clean and well-maintained inflatable water rollers.</li>
-      <li>Designated shallow pool area for the activity.</li>
-      <li>Life jackets and safety gear available for all participants.</li>
-      <li>Staff assistance for entry, rolling, and exit from the water roller.</li>
-      <li>Changing and drying area near the pool zone.</li>
-    </ul>
+
   </div>
 <% } %>
 
@@ -730,6 +720,9 @@
   <h1 class="heading">Mountain Bike</h1>
   <div class="main">
     <div class="container">
+      <div class="img_con">
+        <img src="/morning-desert-safari-with-quad-bike-tour-jeddah-2235259.jpg" alt="Mountain Bike">
+      </div>
       <div class="text">
         <h1>Description</h1>
         <p>
@@ -738,9 +731,7 @@
           It’s a fun-filled way to build confidence, improve coordination, and enjoy the beauty of the outdoors — all while feeling the rush of wind and adventure.
         </p>
       </div>
-      <div class="img_con">
-        <img src="/morning-desert-safari-with-quad-bike-tour-jeddah-2235259.jpg" alt="Mountain Bike">
-      </div>
+
     </div>
 
     <h1>Safety Precautions</h1>
@@ -752,14 +743,7 @@
       <li>Supervisors ensure every participant follows the safety instructions.</li>
     </ul>
 
-    <h1>Arrangements</h1>
-    <ul class="items">
-      <li>Well-maintained kids’ mountain bikes of different sizes.</li>
-      <li>Dedicated cycling track with natural surroundings.</li>
-      <li>Safety gear provided by the camp before the ride.</li>
-      <li>Trained instructors to guide and assist throughout the activity.</li>
-      <li>Rest area and refreshment spot near the track.</li>
-    </ul>
+
   </div>
 <% } %>
 
@@ -767,6 +751,9 @@
   <h1 class="heading">River Crossing</h1>
   <div class="main">
     <div class="container">
+        <div class="img_con">
+        <img src="/images.jpeg"alt="River Crossing">
+      </div>
       <div class="text">
         <h1>Description</h1>
         <p>
@@ -775,9 +762,7 @@
           It’s a perfect mix of excitement and confidence-building in nature’s lap.
         </p>
       </div>
-      <div class="img_con">
-        <img src="/images.jpeg"alt="River Crossing">
-      </div>
+
     </div>
 
     <h1>Safety Precautions</h1>
@@ -789,14 +774,7 @@
       <li>Emergency staff and first aid are always on standby.</li>
     </ul>
 
-    <h1>Arrangements</h1>
-    <ul class="items">
-      <li>Secure rope setup with proper anchor points on both sides.</li>
-      <li>Safety gear including helmets, harnesses, and gloves for all participants.</li>
-      <li>Experienced trainers to guide and assist children step-by-step.</li>
-      <li>Designated viewing area for other campers to cheer their friends.</li>
-      <li>Clean towel and refreshment zone available after the activity.</li>
-    </ul>
+
   </div>
 <% } %>
 
@@ -804,6 +782,9 @@
   <h1 class="heading">Micky Mouse</h1>
   <div class="main">
     <div class="container">
+      <div class="img_con">
+        <img src="/download.jpeg" alt="Micky Mouse">
+      </div>
       <div class="text">
         <h1>Description</h1>
         <p>
@@ -812,9 +793,7 @@
           Kids enjoy dancing, clicking pictures, and playing interactive games with Micky, creating magical memories that sparkle with joy and imagination.
         </p>
       </div>
-      <div class="img_con">
-        <img src="/download.jpeg" alt="Micky Mouse">
-      </div>
+
     </div>
 
     <h1>Safety Precautions</h1>
@@ -826,20 +805,16 @@
       <li>Hydration and rest breaks are provided for all participants.</li>
     </ul>
 
-    <h1>Arrangements</h1>
-    <ul class="items">
-      <li>Colorful stage setup and themed decorations for Micky Mouse time.</li>
-      <li>Fun music and dance zone for kids to enjoy with Micky.</li>
-      <li>Photo corner for memorable pictures with their favorite character.</li>
-      <li>Interactive games and activities led by Micky and camp coordinators.</li>
-      <li>Small gifts or stickers for participants to take home as souvenirs.</li>
-    </ul>
+
   </div>
 <% } %>
 <% if (activity === "dotgame") { %>
   <h1 class="heading">Dot Game</h1>
   <div class="main">
     <div class="container">
+       <div class="img_con">
+        <img src="/images (1).jpeg" alt="Dot Game">
+      </div>
       <div class="text">
         <h1>Description</h1>
         <p>
@@ -848,9 +823,7 @@
           It’s a perfect mix of creativity, concentration, and laughter that keeps every camper excited and engaged!
         </p>
       </div>
-      <div class="img_con">
-        <img src="/images (1).jpeg" alt="Dot Game">
-      </div>
+
     </div>
 
     <h1>Safety Precautions</h1>
@@ -862,14 +835,7 @@
       <li>First-aid and staff support are available on-site.</li>
     </ul>
 
-    <h1>Arrangements</h1>
-    <ul class="items">
-      <li>Colorful dot boards and sheets for individual or team play.</li>
-      <li>Markers, pens, and drawing tools provided by the camp.</li>
-      <li>Dedicated instructor to explain the rules and guide the activity.</li>
-      <li>Fun challenges and rounds to make the game more exciting.</li>
-      <li>Winners receive small rewards or appreciation badges.</li>
-    </ul>
+
   </div>
 <% } %>
 
@@ -877,6 +843,9 @@
   <h1 class="heading">Commando Crossing</h1>
   <div class="main">
     <div class="container">
+        <div class="img_con">
+        <img src="/Commando-Crossing.webp" alt="Commando Crossing">
+      </div>
       <div class="text">
         <h1>Description</h1>
         <p>
@@ -885,9 +854,7 @@
           It helps improve endurance, coordination, and teamwork while giving them a taste of true adventure and discipline in a fun-filled way.
         </p>
       </div>
-      <div class="img_con">
-        <img src="/Commando-Crossing.webp" alt="Commando Crossing">
-      </div>
+
     </div>
 
     <h1>Safety Precautions</h1>
@@ -899,14 +866,7 @@
       <li>First-aid support and hydration breaks are always available.</li>
     </ul>
 
-    <h1>Arrangements</h1>
-    <ul class="items">
-      <li>Strong rope setup for commando-style crossings and balance exercises.</li>
-      <li>Dedicated adventure zone with safety gear for all participants.</li>
-      <li>Guidance and encouragement from trained instructors.</li>
-      <li>Step-by-step practice sessions for beginners.</li>
-      <li>Certificates or badges for those completing the challenge successfully.</li>
-    </ul>
+
   </div>
 <% } %>
 

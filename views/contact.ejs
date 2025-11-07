@@ -11,7 +11,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
 
   <style>
-
     * {
       margin: 0;
       padding: 0;
@@ -28,7 +27,6 @@
       flex-direction: column;
     }
 
-    /* Offset for navbar height */
     main {
       flex: 1;
       display: flex;
@@ -51,7 +49,7 @@
 
     .contact-container h1 {
       text-align: center;
-      color:#450693; /* Soft sky blue */
+      color:#450693;
       font-weight: 700;
       margin-bottom: 10px;
       font-size: 2.2rem;
@@ -71,7 +69,7 @@
     }
 
     input {
-      padding: 12px 15px;
+      padding: 14px 15px;
       border: 1px solid rgba(255, 255, 255, 0.4);
       border-radius: 8px;
       outline: none;
@@ -79,11 +77,12 @@
       font-size: 1rem;
       transition: 0.3s;
       color: #003366;
+      width: 100%;
     }
 
     input:focus {
       background: white;
-      border-color: #4a90e2; /* Blue highlight */
+      border-color: #4a90e2;
       box-shadow: 0 0 10px rgba(74, 144, 226, 0.5);
     }
 
@@ -104,126 +103,281 @@
       box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
       transform: scale(1.03);
     }
-  .alert {
-  position: fixed;
-  top: 90px; /* adjust according to navbar height */
-  right: 450px;
-  padding: 15px 25px;
-  background-color: #007BFF;
+
+    .alert {
+      position: fixed;
+      top: 90px;
+      right: 450px;
+      padding: 15px 25px;
+      background-color: #007BFF;
+      color: white;
+      border-radius: 5px;
+      box-shadow: 0px 4px 6px rgba(0,0,0,0.2);
+      font-family: sans-serif;
+      z-index: 1000;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .alert.show {
+      opacity: 1;
+    }
+
+   .designation-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  max-width: 400px;
+}
+
+#designationInput {
+  flex: 1;
+  padding: 14px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.dropdown-container {
+  position: relative;
+}
+
+#dropdownBtn {
+  background-color: #007bff;
   color: white;
-  border-radius: 5px;
-  box-shadow: 0px 4px 6px rgba(0,0,0,0.2);
-  font-family: sans-serif;
-  z-index: 1000;
-  opacity: 0;
-  transition: opacity 0.5s ease;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 10px;
+  cursor: pointer;
 }
 
-.alert.show {
-  opacity: 1;
+#dropdownBtn:hover {
+  background-color: #0056b3;
 }
 
-/* Responsive positioning for smaller screens */
-@media (max-width: 1024px) {
-  .alert {
-    right: 150px;
-  }
+.dropdown-list {
+  display: none;
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  width: 250px;
+  z-index: 10;
 }
 
-@media (max-width: 768px) {
-  .alert {
-    right: 50px;
-    top: 80px;
-    font-size: 0.95rem;
-    padding: 12px 20px;
-  }
+#searchBox {
+  width: 100%;
+  padding: 6px 10px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  outline: none;
 }
 
-@media (max-width: 480px) {
-  .alert {
-    top: 200px;
-    right: 10px;
-    font-size: 0.9rem;
-    padding: 10px 10px;
-    text-align: center;
-  }
+#designationOptions {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 200px;
+  overflow-y: auto;
+  color:black;
 }
-</style>
+
+#designationOptions li {
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+#designationOptions li:hover {
+  background-color: #f1f1f1;
+}
+
+    .hidden {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .contact-container {
+        padding: 30px 20px;
+      }
+      .contact-container h1 {
+        font-size: 1.8rem;
+      }
+      input, button {
+        font-size: 0.95rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .contact-container {
+        width: 95%;
+        padding: 25px 18px;
+      }
+      .alert {
+        right: 10px;
+        top: 180px;
+      }
+    }
+  </style>
 </head>
 
 <body>
   <%- include('partial/nav') %>
-<div id="alertMessage" class="alert"></div>
-  <main>
+  <div id="alertMessage" class="alert"></div>
 
+  <main>
     <div class="contact-container">
       <h1>Contact Us</h1>
       <p>We’d love to hear from you! Fill out the form below to connect with the Krishna Camps team.</p>
-    <form id="contactForm">
-    <input type ="text" name="name" placeholder="Full Name" required>
-    <input type="email" name="email" placeholder="Email" required>
-    <input type="text" name="contact" placeholder="Contact Number" required>
-    <input type="text" name="designation" placeholder="Designation" required>
-    <input type="text" name="schoolname" placeholder="School Name" required>
-    <button type="submit">Submit</button>
-</form>
 
-<!-- Alert message container -->
+      <form id="contactForm">
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="text" id="contact" name="contact" placeholder="Contact Number" required>
+
+        <div class="designation-container">
+  <input type="text" id="designationInput" name="designation" placeholder="Designation" required>
+  <div class="dropdown-container">
+    <button type="button" id="dropdownBtn">▼</button>
+    <div id="dropdownList" class="dropdown-list">
+      <input type="text" id="searchBox" placeholder="Search...">
+      <ul id="designationOptions">
+        <li>Principal</li>
+        <li>Vice Principal</li>
+        <li>Headmaster</li>
+        <li>Academic Coordinator</li>
+        <li>Class Teacher</li>
+        <li>Subject Teacher</li>
+        <li>English Teacher</li>
+        <li>Science Teacher</li>
+        <li>Computer Teacher</li>
+        <li>Physical Education Teacher</li>
+        <li>Music Teacher</li>
+        <li>Art Teacher</li>
+        <li>Librarian</li>
+        <li>Special Educator</li>
+        <li>Lab Assistant</li>
+        <li>Admission Counselor</li>
+        <li>School Manager</li>
+        <li>HR Executive</li>
+        <li>Sports Coach</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+        <input type="text" name="schoolname" placeholder="School Name" required>
+        <button type="submit">Submit</button>
+      </form>
     </div>
   </main>
 
-
-
-     <%- include('partial/footer') %>
+  <%- include('partial/footer') %>
 
   <script>
-const form = document.getElementById('contactForm');
-const alertDiv = document.getElementById('alertMessage');
+    const form = document.getElementById('contactForm');
+    const alertDiv = document.getElementById('alertMessage');
 
-function showAlert(message, type) {
-    alertDiv.innerText = message;
-    alertDiv.style.backgroundColor = type === 'success' ? '#28a745' : '#dc3545';
-    alertDiv.classList.add('show');
+    function showAlert(message, type) {
+      alertDiv.innerText = message;
+      alertDiv.style.backgroundColor = type === 'success' ? '#28a745' : '#dc3545';
+      alertDiv.classList.add('show');
+      setTimeout(() => alertDiv.classList.remove('show'), 1000);
+    }
 
-    // Hide after 3 seconds
-    setTimeout(() => {
-        alertDiv.classList.remove('show');
-    }, 1000);
-}
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+      const contact = data.contact.trim();
 
-form.addEventListener('submit', async (e) => {
-    e.preventDefault(); // prevent default form submission
+      const basicCheck = /^[6-9]\d{9}$/.test(contact);
+      const allZeroAfterFirst = /^[6-9]0{9}$/.test(contact);
 
-    const formData = new FormData(form);
-    const data = Object.fromEntries(formData.entries());
+      if (!basicCheck || allZeroAfterFirst) {
+        showAlert('Please enter a valid 10-digit mobile number (should not have all zeros after the first digit).', 'error');
+        return;
+      }
 
-
-if (!/^[6-9]\d{9}$/.test(data.contact)) {
-    showAlert('Please enter a valid 10-digit mobile number starting with 6, 7, 8, or 9.', 'error');
-    return; // stop form submission
-}
-
-
-    try {
+      try {
         const response = await fetch('/submit', {
-            method: 'POST',
-            headers: {'Content-Type':'application/json'},
-            body: JSON.stringify(data)
+          method: 'POST',
+          headers: {'Content-Type':'application/json'},
+          body: JSON.stringify(data)
         });
 
         if (response.ok) {
-            showAlert('Your information has been submitted successfully!', 'success');
-            setTimeout(() => {
-                window.location.href = '/';
-            }, 1000); // redirect after 3 seconds
+          showAlert('Your information has been submitted successfully!', 'success');
+          setTimeout(() => window.location.href = '/', 1000);
         } else {
-            showAlert('Something went wrong. Please try again.', 'error');
+          showAlert('Something went wrong. Please try again.', 'error');
         }
-    } catch(err) {
+      } catch(err) {
         showAlert('Error: ' + err.message, 'error');
-    }
-});
-</script>
+      }
+    });
 
+
+    const contactInput = document.getElementById('contact');
+
+contactInput.addEventListener('input', () => {
+  // Remove any non-digit characters
+  let number = contactInput.value.replace(/\D/g, '');
+
+  // If it starts with 91, remove it to avoid duplication
+  if (number.startsWith('91') && number.length > 10) {
+    number = number.slice(2);
+  }
+
+  // If exactly 10 digits entered, add +91 prefix
+  if (number.length === 10) {
+    contactInput.value = `+91 ${number}`;
+  } else {
+    contactInput.value = number;
+  }
+});
+
+    const dropdownBtn = document.getElementById('dropdownBtn');
+const dropdownList = document.getElementById('dropdownList');
+const designationInput = document.getElementById('designationInput');
+const searchBox = document.getElementById('searchBox');
+const options = document.querySelectorAll('#designationOptions li');
+
+// Toggle dropdown visibility
+dropdownBtn.addEventListener('click', () => {
+  dropdownList.style.display = dropdownList.style.display === 'block' ? 'none' : 'block';
+  searchBox.value = '';
+  searchBox.focus();
+});
+
+// Select option
+options.forEach(option => {
+  option.addEventListener('click', () => {
+    designationInput.value = option.textContent;
+    dropdownList.style.display = 'none';
+  });
+});
+
+// Search filter
+searchBox.addEventListener('input', () => {
+  const filter = searchBox.value.toLowerCase();
+  options.forEach(option => {
+    const text = option.textContent.toLowerCase();
+    option.style.display = text.includes(filter) ? 'block' : 'none';
+  });
+});
+
+// Close dropdown if clicked outside
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('.dropdown-container')) {
+    dropdownList.style.display = 'none';
+  }
+});
+
+  </script>
 </body>
 </html>
