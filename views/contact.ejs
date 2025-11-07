@@ -299,7 +299,7 @@
       const allZeroAfterFirst = /^[6-9]0{9}$/.test(contact);
 
       if (!basicCheck || allZeroAfterFirst) {
-        showAlert('Please enter a valid 10-digit mobile number (should not have all zeros after the first digit).', 'error');
+        showAlert('Please enter a valid 10-digit mobile number.', 'error');
         return;
       }
 
