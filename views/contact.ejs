@@ -20,7 +20,7 @@
     }
 
     body {
-      background: url('/top-view-animal-figurines-with-planet-earth-calendar-animal-day.jpg') no-repeat center center/cover;
+      background: url('/vintage-pink-telephone-composition.jpg') no-repeat center center/cover;
       background-attachment: fixed;
       color: #fff;
       min-height: 100vh;
@@ -197,11 +197,12 @@ form.addEventListener('submit', async (e) => {
     const formData = new FormData(form);
     const data = Object.fromEntries(formData.entries());
 
-    // ✅ Frontend validation for contact number
-    if (!/^\d{10}$/.test(data.contact)) {
-        showAlert('Please enter a valid 10-digit contact number.', 'error');
-        return; // stop form submission
-    }
+
+if (!/^[6-9]\d{9}$/.test(data.contact)) {
+    showAlert('Please enter a valid 10-digit mobile number starting with 6, 7, 8, or 9.', 'error');
+    return; // stop form submission
+}
+
 
     try {
         const response = await fetch('/submit', {

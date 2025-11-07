@@ -6,7 +6,7 @@
 
 body {
   font-family: "Montserrat", sans-serif;
-  background: linear-gradient(to bottom right, #f8f6ef,beige);
+  background: linear-gradient(to bottom right, #ffffff,beige);
   color: #362f6d;
 }
 
@@ -93,14 +93,16 @@ header h1 {
 .activity-box {
   width: 300px;
   background: #fff;
+
   border-radius: 15px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.7);
   overflow: hidden;
-  transition: transform 0.3s;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .activity-box:hover {
   transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
 }
 
 .activity-box img {
